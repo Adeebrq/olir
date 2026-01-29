@@ -1,13 +1,57 @@
 .speciality-wrapper {
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
-    padding: 50px 0;
+    padding: 80px 20px;
+    background-color: #fff;
+    max-width: 1280px;
 }
 
-.speciality-wrapper>p {
-    max-width: 80%;
-    margin: 10px auto 12px;
+/* Main Heading - "Discover Our Centres of Excellence" */
+.speciality-wrapper .title {
+    font-size: 2.25rem;
+    /* text-4xl */
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    /* text-blue-900 */
+    margin-bottom: 1.5rem;
+    /* mb-6 */
+}
+
+@media (min-width: 768px) {
+    .speciality-wrapper .title {
+        font-size: 3rem;
+        /* text-5xl */
+        line-height: 1;
+    }
+}
+
+/* Subheading Label - "OUR SPECIALTIES" */
+.speciality-wrapper .big-text {
+    color: #0d9488;
+    /* text-teal-600 */
+    font-weight: 600;
+    font-size: 0.875rem !important;
+    /* text-sm */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* tracking-wider */
+    margin-bottom: 0.75rem;
+    /* mb-3 */
+}
+
+/* Description Text */
+.speciality-wrapper>.text {
+    font-size: 1rem;
+    /* text-base */
+    line-height: 1.625;
+    /* leading-relaxed */
+    color: #4b5563;
+    /* text-gray-600 */
+    max-width: 56rem;
+    /* max-w-4xl */
+    margin: 0 auto 3rem auto;
 }
 
 .speciality-tabs {
@@ -58,6 +102,7 @@
     line-height: 1.5;
     margin-bottom: 8px;
     max-width: 90%;
+    font-size: 15px;
 }
 
 .specialties-card-read-more {

@@ -9,19 +9,27 @@ import DirectorsTabs from "./DirectorsTabs";
 import Specialties from "./Specialties";
 import Update from "./Update";
 import FAQCallbackSection from "./FAQCallbackSection";
+import HealthcareStats from "../../Components/aboutUs";
+import LeadershipTeam from "../../Components/LeadershipTeam";
+import BookAppointment from "../../Components/bookingModal";
 
 const LandingPage = () => {
   return (<>
     {/* <SEO description={LANDINGPAGE_DESC} title={LANDINGPAGE_TITLE} keywords={LANDINGPAGE_KEYWORDS}/> */}
     <div className="universal-component-wrapper">
       <HospitalHeroSection />
+      <HealthcareStats />
+      < LeadershipTeam />
       <Specialties />
-      <DirectorsTabs />
       <WhyChooseUs />
       <PatientTools />
-      <Update />
       <Testimonials />
-      <FAQCallbackSection />
+
+      {/* FAQ + BookAppointment Wrapper for absolute positioning */}
+      <div className="relative">
+        <FAQCallbackSection />
+        <BookAppointment />
+      </div>
     </div>
   </>
   );
