@@ -1,0 +1,257 @@
+.speciality-wrapper {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fff;
+    max-width: 1280px;
+}
+
+/* Main Heading - "Discover Our Centres of Excellence" */
+.speciality-wrapper .title {
+    font-size: 2.25rem;
+    /* text-4xl */
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    /* text-blue-900 */
+    margin-bottom: 1.5rem;
+    /* mb-6 */
+}
+
+@media (min-width: 768px) {
+    .speciality-wrapper .title {
+        font-size: 3rem;
+        /* text-5xl */
+        line-height: 1;
+    }
+}
+
+/* Subheading Label - "OUR SPECIALTIES" */
+.speciality-wrapper .big-text {
+    color: #0d9488;
+    /* text-teal-600 */
+    font-weight: 600;
+    font-size: 0.875rem !important;
+    /* text-sm */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* tracking-wider */
+    margin-bottom: 0.75rem;
+    /* mb-3 */
+}
+
+/* Description Text */
+.speciality-wrapper>.text {
+    font-size: 1rem;
+    /* text-base */
+    line-height: 1.625;
+    /* leading-relaxed */
+    color: #4b5563;
+    /* text-gray-600 */
+    max-width: 56rem;
+    /* max-w-4xl */
+    margin: 0 auto 3rem auto;
+}
+
+.speciality-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.speciality-tab-item {
+    cursor: "pointer";
+    font-weight: 600;
+}
+
+.speciality-tab-item .active {
+    color: white;
+    background-color: var(--title-color);
+}
+
+.specialties-card {
+    background: #e5f4f7;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Text Section */
+.specialties-card-content {
+    text-align: left;
+    margin: 0;
+    flex: 1;
+}
+
+.specialties-card-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #003a45;
+    margin-bottom: 12px;
+}
+
+.specialties-card-description {
+    color: #355a61;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    max-width: 90%;
+    font-size: 15px;
+}
+
+.specialties-card-read-more {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #006d77;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.specialties-card-sub-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #003a45;
+    margin: auto 0 0;
+    margin-top: auto;
+}
+
+.specialty-btn {
+    border: none;
+    color: var(--title-color);
+    background-color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 50px;
+    width: fit-content;
+    transition: all 0.2s ease-in;
+
+    color: var(--title-color);
+    border: none;
+    background-color: var(--primary-color);
+    margin-top: 30px;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.divider {
+    height: 1px;
+    background: #bfd6da;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.specialties-card-button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.outline-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--title-color);
+    background: transparent;
+    color: var(--title-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    background: #006d77;
+    color: #fff;
+    transform: none;
+}
+
+/* Image Section */
+.specialties-card-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+.specialties-card-image {
+    width: 100%;
+    max-width: 340px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.previous-arrow,
+.next-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--secondary-color);
+    height: 40px;
+    width: 40px;
+    bottom: 50%;
+    border-radius: 50%;
+    z-index: 2;
+    color: white;
+}
+
+.previous-arrow {
+    left: 5rem;
+}
+
+.next-arrow {
+    right: 5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .specialties-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .speciality-wrapper>p {
+        max-width: 90%;
+    }
+
+    .specialties-card-content {
+        text-align: center;
+    }
+
+    .specialties-card-button-group {
+        justify-content: center;
+    }
+
+    .specialties-card-image-wrapper {
+        justify-content: center;
+    }
+
+    .specialties-card-description {
+        max-width: 100%;
+    }
+
+    .specialty-btn {
+        margin-top: 80px;
+    }
+
+    .previous-arrow,
+    .next-arrow {
+        bottom: -60px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .specialties-card-image {
+        height: 250px;
+    }
+
+}

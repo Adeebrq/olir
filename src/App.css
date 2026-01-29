@@ -1,0 +1,318 @@
+/* for the top first content of the page to have a common margin top */
+.main-content {
+  position: relative;
+  width: 100%;
+  padding: 0 15% 0;
+}
+
+.universal-component-wrapper {
+  width: 100%;
+}
+
+/* the common left and right padding for the components */
+.padded-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px 190px 50px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Font Family */
+
+.figtree {
+  font-family: Figtree !important;
+}
+
+/* Button */
+
+.button-secondary {
+  border: 1px solid var(--primary-color);
+  color: white;
+  background-color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 50px;
+  height: fit-content;
+  width: fit-content;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background-color: white;
+    color: var(--primary-color);
+  }
+}
+
+/* Colors */
+
+.black {
+  color: black !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.primary-background-color {
+  background-color: var(--primary-color);
+}
+
+/* 
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.visibility-visible {
+  visibility: visible;
+}
+
+/* common FontSize  */
+
+.title {
+  font-size: 26px;
+  color: var(--title-color);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title-medium {
+  font-family: Figtree;
+  font-size: 38px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.title-medium-black {
+  font-family: Figtree;
+  font-size: 38px;
+  margin: 0;
+  color: black;
+}
+
+.title-small {
+  font-family: Figtree;
+  font-size: 32px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.title-small-black {
+  font-family: Figtree;
+  font-size: 32px;
+  color: black;
+  margin: 0;
+}
+
+.big-text {
+  font-size: 14px !important;
+  color: var(--title-color);
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+.text {
+  color: var(--title-color);
+  font-size: 13px;
+}
+
+.semi-bold {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* display */
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Flex and Grid */
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Border */
+
+.b-r {
+  border: 1px solid red;
+}
+
+.b-b {
+  border: 1px solid black;
+}
+
+.b-g {
+  border: 1px solid green;
+}
+
+.icon-wrapper {
+  position: relative;
+}
+
+.icon-wrapper svg {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.ellipse-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.centered-icon {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+@media (max-width: 1100px) {}
+
+.mobile-only {
+  display: none;
+}
+
+.large-screen-only {
+  display: block;
+}
+
+@media (max-width: 480px) {
+
+
+  .hero-right-up-image {
+    z-index: 0;
+  }
+
+  .hero-right-down-image {
+    z-index: 0;
+  }
+
+  .title-big {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .title-medium {
+    font-size: 28px;
+  }
+
+  .title-medium-black {
+    font-size: 28px;
+  }
+
+  .title-small {
+    font-size: 22px;
+  }
+
+  .title-small-black {
+    font-size: 22px;
+  }
+
+  .title-hero {
+    font-size: 35px;
+  }
+
+  .title-medium {
+    font-size: 28px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .big-text{
+    font-size: 15px;
+  }
+
+  .padded-container {
+    padding: 0 0 0 0;
+  }
+
+  .padded-container {
+    padding: 30px 20px 30px 20px;
+  }
+
+  .ruler {
+    width: 85%;
+  }
+
+  .padded-container {
+    padding: 0 0 0 0;
+  }
+
+  .main-content {
+    padding: 0 5% 0;
+    width: 100%;
+  }
+
+  .padded-container {
+    padding: 30px 20px 30px 20px;
+  }
+
+  .ruler {
+    width: 85%;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .large-screen-only {
+    display: none;
+  }
+}
