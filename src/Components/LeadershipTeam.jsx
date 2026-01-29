@@ -11,7 +11,9 @@ const LeadershipTeam = () => {
     const teamMembers = [
         {
             id: 0,
-            name: "Dr. Rajesh Kumar",
+            name: "Dr.F.Fakhruddin",
+            degree: "M.S.Ortho",
+            role: "Co-Founder",
             image: doc1,
             tooltips: {
                 topLeft: {
@@ -38,7 +40,9 @@ const LeadershipTeam = () => {
         },
         {
             id: 1,
-            name: "Dr. B. Chendil Nathan",
+            name: "Dr.Sathish Kumar. T.E",
+            degree: "MBBS, MS, MCH",
+            role: "Director",
             image: doc2,
             tooltips: {
                 topLeft: {
@@ -65,7 +69,9 @@ const LeadershipTeam = () => {
         },
         {
             id: 2,
-            name: "Dr. Priya Sharma",
+            name: "Dr.Nandini",
+            degree: "MS, PCHM",
+            role: "Co-Founder",
             image: doc3,
             tooltips: {
                 topLeft: {
@@ -92,7 +98,9 @@ const LeadershipTeam = () => {
         },
         {
             id: 3,
-            name: "Dr. Arun Menon",
+            name: "Dr.Naga Praven",
+            degree: "MBBS, D.Ortho, DNB (Ortho)",
+            role: "Co-Founder",
             image: doc4,
             tooltips: {
                 topLeft: {
@@ -240,10 +248,16 @@ const LeadershipTeam = () => {
 
                                     {/* Doctor Name Pill - At bottom of image */}
                                     <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-20">
-                                        <div className={`text-white px-6 py-2 rounded-full shadow-lg transition-all duration-500 ${activeDoctor === member.id ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                                        <div className={`text-white px-6 py-2 rounded-2xl shadow-lg transition-all duration-500 flex flex-col items-center ${activeDoctor === member.id ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                                             }`} style={{ backgroundColor: '#2596be' }}>
                                             <p className="text-sm font-bold whitespace-nowrap">
                                                 {member.name}
+                                            </p>
+                                            <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90">
+                                                {member.degree}
+                                            </p>
+                                            <p className="text-[10px] font-semibold uppercase tracking-wider mt-0.5 opacity-80">
+                                                {member.role}
                                             </p>
                                         </div>
                                     </div>

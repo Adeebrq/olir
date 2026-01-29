@@ -3,8 +3,11 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import ScrollingBanner from './heroCarousel';
 import heroVideo from "../assets/HeroVideo2.mp4";
 import BookAppointmentForm from './bookingForm';
+import HeroModal from './HeroModal';
 
 const HospitalHeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative h-screen w-full overflow-hidden">
 
@@ -50,14 +53,22 @@ const HospitalHeroSection = () => {
               <ArrowRight size={20} />
             </button> */}
 
-            {/* 50% Off Text */}
-            <div className="relative mt-4">
-              <p className="font-handwriting text-3xl md:text-4xl text-[#FFE666] rotate-[-5deg]">
-                50% Off <span className="font-sans text-white text-lg block sm:inline ml-2 rotate-[5deg] translate-y-1">ON FULL BODY TEST</span>
+            {/* 50% Off Text - Clickable Trigger */}
+            <div
+              onClick={() => setIsModalOpen(true)}
+              className="relative mt-4 cursor-pointer group hover:scale-105 transition-transform duration-300"
+            >
+              <p className="font-handwriting text-3xl md:text-4xl text-[#FFE666] rotate-[-5deg] group-hover:text-[#fff066] transition-colors">
+                50% Off <span className="font-sans text-white text-lg block sm:inline ml-2 rotate-[5deg] translate-y-1 group-hover:text-blue-100">ON FULL BODY TEST</span>
               </p>
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-white/50" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <svg className="absolute -bottom-2 left-0 w-full h-3 text-white/50 group-hover:text-[#FFE666] transition-colors" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
               </svg>
+
+              {/* Tooltip hint */}
+              <div className="absolute -right-6 -top-6 bg-white text-blue-900 text-xs font-bold px-2 py-1 rounded-lg transform rotate-12 shadow-md animate-bounce">
+                Click to Claim!
+              </div>
             </div>
           </div>
         </div>
@@ -70,6 +81,9 @@ const HospitalHeroSection = () => {
         </div>
 
       </div>
+
+      {/* Hero Modal */}
+      <HeroModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* WhatsApp Widget */}
       <a
