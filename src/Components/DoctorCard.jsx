@@ -131,6 +131,13 @@ const DoctorCard = ({ doctor }) => {
                     transform: scale(1.08) translateX(15%);
                 }
 
+                /* Specific adjustment for unknown/default image to prevent floating/cutoff appearance */
+                .doctor-image[src*="doc1"] {
+                    object-fit: cover;
+                    object-position: top center;
+                    transform: scale(1.1) translateY(20px);
+                }
+
                 /* Bottom overlay */
                 .bottom-overlay {
                     position: absolute;

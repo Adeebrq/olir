@@ -45,7 +45,13 @@ const LeadershipTeam = () => {
         {
             id: 1,
             name: "Dr. T. E. Sathish Kumar",
-            degree: "MBBS, MS General Surgery, MCh Neurosurgery",
+            degree: (
+                <>
+                    MBBS, MS General Surgery,
+                    <br />
+                    MCh Neurosurgery
+                </>
+            ),
             role: "Director",
             image: doc2,
             route: "/doctors/Dr-Sathish-Kumar",
@@ -156,12 +162,12 @@ const LeadershipTeam = () => {
         let positionClass = '';
         let connectorClass = '';
         // Reduce connector height on mobile to pull tooltips closer
-        let connectorHeight = isMobile ? 'h-8' : 'h-14';
+        let connectorHeight = isMobile ? 'h-8' : 'h-10';
         
         // Tighter vertical positioning on mobile
-        const topOffset = isMobile ? '-top-14' : '-top-28';
+        const topOffset = isMobile ? '-top-14' : '-top-20';
         // Apply extra spacing for specific cases (like Dr. Fakhruddin) on mobile
-        const bottomOffset = isMobile ? (extraBottomSpacing ? '-bottom-24' : '-bottom-14') : '-bottom-28';
+        const bottomOffset = isMobile ? (extraBottomSpacing ? '-bottom-24' : '-bottom-14') : '-bottom-20';
         
         // Scale down mobile tooltips and set origin to shrink towards center
         const mobileScale = isMobile ? 'scale-[0.8]' : '';
@@ -170,28 +176,28 @@ const LeadershipTeam = () => {
         if (position === 'topLeft') {
             // Extend to the left from center
             // Reduce margin on mobile to bring closer to center line
-            const margin = isMobile ? 'mr-0.5' : 'mr-2';
+            const margin = isMobile ? 'mr-0.5' : 'mr-1.5';
             positionClass = `${topOffset} right-1/2 ${margin}`;
             connectorClass = 'right-0';
             originClass = 'origin-bottom-right';
         }
         if (position === 'topRight') {
             // Extend to the right from center
-            const margin = isMobile ? 'ml-0.5' : 'ml-2';
+            const margin = isMobile ? 'ml-0.5' : 'ml-1.5';
             positionClass = `${topOffset} left-1/2 ${margin}`;
             connectorClass = 'left-0';
             originClass = 'origin-bottom-left';
         }
         if (position === 'bottomLeft') {
             // Extend to the left from center
-            const margin = isMobile ? 'mr-0.5' : 'mr-2';
+            const margin = isMobile ? 'mr-0.5' : 'mr-1.5';
             positionClass = `${bottomOffset} right-1/2 ${margin}`;
             connectorClass = 'right-0';
             originClass = 'origin-top-right';
         }
         if (position === 'bottomRight') {
             // Extend to the right from center
-            const margin = isMobile ? 'ml-0.5' : 'ml-2';
+            const margin = isMobile ? 'ml-0.5' : 'ml-1.5';
             positionClass = `${bottomOffset} left-1/2 ${margin}`;
             connectorClass = 'left-0';
             originClass = 'origin-top-left';
@@ -307,7 +313,7 @@ const LeadershipTeam = () => {
                                         />
 
                                         {/* Image Container */}
-                                        <div className="relative w-full overflow-visible z-20">
+                                        <div className="relative w-full overflow-visible ">
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
@@ -315,12 +321,12 @@ const LeadershipTeam = () => {
                                             />
                                             
                                             {/* Name Pill */}
-                                            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-30">
+                                            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-[25]">
                                                 <div className="bg-[#2596be] text-white px-6 py-2 rounded-2xl shadow-lg flex flex-col items-center w-[90%] max-w-[240px]">
                                                     <p className="text-sm font-bold whitespace-nowrap">
                                                         {member.name}
                                                     </p>
-                                                    <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90">
+                                                    <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90 text-center">
                                                         {member.degree}
                                                     </p>
                                                     <p className="text-[10px] font-semibold uppercase tracking-wider mt-0.5 opacity-80">
@@ -355,13 +361,13 @@ const LeadershipTeam = () => {
                     </div>
                 </div>
 
-                {/* Desktop Grid (>= 769px) */}
-                <div className="py-24 relative hidden md:block">
-                    <div className="flex justify-center items-end max-w-6xl mx-auto">
+                {/* Desktop Grid (>= 769px) - Scaled down by 20% */}
+                <div className="py-16 relative hidden md:block">
+                    <div className="flex justify-center items-end max-w-6xl mx-auto scale-[0.8] origin-center">
                         {teamMembers.map((member) => (
                             <div
                                 key={member.id}
-                                className="relative flex flex-col items-center cursor-pointer -mx-12 transition-transform hover:scale-105"
+                                className={`relative flex flex-col items-center cursor-pointer -mx-12 transition-transform hover:scale-105 ${activeDoctor === member.id ? 'z-40' : 'z-10'}`}
                                 onMouseEnter={() => setActiveDoctor(member.id)}
                                 onClick={() => handleDoctorClick(member.route)}
                                 role="button"
@@ -396,13 +402,13 @@ const LeadershipTeam = () => {
                                     />
 
                                     {/* Doctor Name Pill - At bottom of image */}
-                                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-20">
+                                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-[25]">
                                         <div className={`text-white px-6 py-2 rounded-2xl shadow-lg transition-all duration-500 flex flex-col items-center ${activeDoctor === member.id ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                                             }`} style={{ backgroundColor: '#2596be' }}>
                                             <p className="text-sm font-bold whitespace-nowrap">
                                                 {member.name}
                                             </p>
-                                            <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90">
+                                            <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90 text-center">
                                                 {member.degree}
                                             </p>
                                             <p className="text-[10px] font-semibold uppercase tracking-wider mt-0.5 opacity-80">

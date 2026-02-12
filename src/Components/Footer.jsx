@@ -121,7 +121,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 text-teal-600 shrink-0 mt-0.5" />
-                <span>7/26 8th Cross Street, Rajalakshmi Nagar, Off. 100 Feet Velachery Bye-Pass Road, Velachery, Chennai - 600 042.</span>
+                <span>7/26, 8th Cross Street, Rajalakshmi Nagar, Off. 100 Feet Velachery Bye-Pass Road, Velachery, Chennai - 600 042.</span>
               </div>
             </div>
           </div>
