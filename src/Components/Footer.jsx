@@ -1,11 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
-import newLogo from '../assets/newLogo.svg';
+import footerLogo from '../assets/footerLogo.svg';
 
 const Footer = () => {
+  const location = useLocation();
+  const isReducedPaddingPage = location.pathname === '/bookappointment' || 
+                                location.pathname === '/blogs' || 
+                                location.pathname === '/events' ||
+                                location.pathname === '/insurance' ||
+                                location.pathname === '/doctors' ||
+                                location.pathname.startsWith('/doctors/') ||
+                                location.pathname === '/HealthPackages' ||
+                                location.pathname.startsWith('/blog/');
+  
   return (
-    <footer className="bg-gradient-to-br from-blue-50/30 via-white to-blue-50/20 pt-80 pb-6 font-sans" style={{ backgroundColor: '#ffffff' }}>
+    <footer className={`bg-gradient-to-br from-blue-50/30 via-white to-blue-50/20 pb-6 font-sans ${isReducedPaddingPage ? 'pt-12' : 'pt-80 max-md:pt-[43rem]'}`} style={{ backgroundColor: '#ffffff' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top Section: Logo + 3 Columns */}
@@ -14,22 +24,22 @@ const Footer = () => {
           {/* Column 1: Logo & Branding */}
           <div className="space-y-4">
             {/* Logo */}
-            <div className="flex flex-col items-start">
-              <img src={newLogo} alt="Olir Super Speciality Hospital" className="h-16 w-auto mb-2" />
+            <div className="flex flex-col items-center md:items-start">
+              <img src={footerLogo} alt="Olir Super Speciality Hospital" className="h-21 w-auto mb-2" />
               <p className="text-sm text-gray-600 italic">
-                "Compassionate Care, Advanced Healing."
+                "Where care meets patient experience"
               </p>
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-3 pt-2">
+            <div className="flex space-x-3 pt-2 justify-center md:justify-start">
               <a href="https://www.instagram.com/olir.hospital/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://www.instagram.com/olir.hospital/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://youtube.com/@olirhospital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -41,16 +51,32 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2.5 text-gray-700 text-sm">
-              {['Home', 'About Us', 'Medical Director', 'Departments & Services', 'Book Appointment', 'Patient Tools', 'FAQs'].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={item === 'Home' ? '/' : '/comingsoon'}
-                    className="hover:text-teal-600 transition-colors"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {['About Us', 'Departments & Services', 'Doctors', 'Health Packages', 'Blogs', 'News/Media', 'Events'].map((item) => {
+                // Define routes for each item
+                const getRoute = (label) => {
+                  switch(label) {
+                    case 'About Us': return '/aboutus';
+                    case 'Departments & Services': return '/department';
+                    case 'Doctors': return '/doctors';
+                    case 'Health Packages': return '/HealthPackages';
+                    case 'Blogs': return '/blogs';
+                    case 'News/Media': return '/news';
+                    case 'Events': return '/events';
+                    default: return '/comingsoon';
+                  }
+                };
+                
+                return (
+                  <li key={item}>
+                    <Link
+                      to={getRoute(item)}
+                      className="hover:text-teal-600 transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -60,13 +86,16 @@ const Footer = () => {
               Patient Resources
             </h3>
             <ul className="space-y-2.5 text-gray-700 text-sm">
-              {['Insurance Info', 'Health Packages', 'Download Forms'].map((item) => (
-                <li key={item}>
-                  <Link to="/comingsoon" className="hover:text-teal-600 transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/insurance" className="hover:text-teal-600 transition-colors">
+                  Insurance Info
+                </Link>
+              </li>
+              <li>
+                <Link to="/HealthPackages" className="hover:text-teal-600 transition-colors">
+                  Health Packages
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -78,17 +107,21 @@ const Footer = () => {
             <div className="space-y-3 text-gray-700 text-sm">
               <div className="flex items-start">
                 <Phone className="w-4 h-4 mr-2 text-teal-600 shrink-0 mt-0.5" />
-                <span>044 - 4000 0006.</span>
+                <span>044 4000 0006</span>
+              </div>
+              <div className="flex items-start">
+                <Phone className="w-4 h-4 mr-2 text-teal-600 shrink-0 mt-0.5" />
+                <span>+91 94080 80909</span>
               </div>
               <div className="flex items-start">
                 <Mail className="w-4 h-4 mr-2 text-teal-600 shrink-0 mt-0.5" />
-                <a href="mailto:Olir_hospital@yahoo.com" className="hover:text-teal-600">
-                  Olir_hospital@yahoo.com
+                <a href="mailto:contactus@olirhospital.com" className="hover:text-teal-600">
+                  contactus@olirhospital.com
                 </a>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 text-teal-600 shrink-0 mt-0.5" />
-                <span>No.12, Main Road, Velachery,<br />Chennai, India</span>
+                <span>7/26 8th Cross Street, Rajalakshmi Nagar, Off. 100 Feet Velachery Bye-Pass Road, Velachery, Chennai - 600 042.</span>
               </div>
             </div>
           </div>
@@ -120,7 +153,6 @@ const Footer = () => {
           <div className="flex justify-center md:justify-end space-x-4">
             <Link to="/comingsoon" className="hover:underline hover:text-teal-600">Privacy Policy</Link>
             <Link to="/comingsoon" className="hover:underline hover:text-teal-600">Terms of Service</Link>
-            <Link to="/comingsoon" className="hover:underline hover:text-teal-600">Cookies Settings</Link>
           </div>
 
         </div>

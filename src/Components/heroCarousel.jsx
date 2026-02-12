@@ -4,12 +4,10 @@ import { Sparkles } from 'lucide-react';
 const bannerItems = [
   '24/7 Emergency & Critical Care',
   'Multi-Speciality Expertise',
-  'Modern Conference Areas',
   'Compassionate Staff',
   'Cutting Edge Technology',
   '24/7 Emergency & Critical Care',
   'Multi-Speciality Expertise',
-  'Modern Conference Areas',
   'Compassionate Staff',
   'Cutting Edge Technology',
 
@@ -17,13 +15,13 @@ const bannerItems = [
 
 const ScrollingBanner = () => {
   return (
-    <section className="w-full h-5 sm:h-16 relative flex items-center overflow-hidden py-8 bg-[#215d8d] shadow-inner-custom">
+    <section className="w-full h-4 sm:h-13 relative flex items-center overflow-hidden py-6 bg-[#215d8d] shadow-inner-custom">
       {/* Scrolling content */}
       <div className="relative z-10 flex items-center animate-scroll font-gloock whitespace-nowrap">
         {bannerItems.map((item, index) => (
           <React.Fragment key={index}>
-            <span className="text-white text-2xl mx-4">{item}</span>
-            <Sparkles className="w-6 h-6 mx-4 text-white" />
+            <span className="text-white text-xl mx-3">{item}</span>
+            <Sparkles className="w-5 h-5 mx-3 text-white" />
           </React.Fragment>
         ))}
       </div>
@@ -39,7 +37,8 @@ const ScrollingBanner = () => {
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 20s linear infinite !important;
+          display: flex !important;
         }
 
         .shadow-inner-custom {

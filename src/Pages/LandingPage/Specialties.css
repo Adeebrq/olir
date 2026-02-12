@@ -8,7 +8,7 @@
 }
 
 /* Main Heading - "Discover Our Centres of Excellence" */
-.speciality-wrapper .title {
+.speciality-wrapper .main-title {
     font-size: 2.25rem;
     /* text-4xl */
     line-height: 2.5rem;
@@ -17,13 +17,47 @@
     /* text-blue-900 */
     margin-bottom: 1.5rem;
     /* mb-6 */
+    text-align: center !important;
+    width: 100%;
+    padding: 0 20px;
 }
 
 @media (min-width: 768px) {
-    .speciality-wrapper .title {
+    .speciality-wrapper .main-title {
         font-size: 3rem;
         /* text-5xl */
         line-height: 1;
+    }
+}
+
+/* Mobile-specific fix for center alignment and line breaks */
+@media (max-width: 767px) {
+    .speciality-wrapper .main-title {
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .speciality-wrapper .main-title .mobile-title {
+        display: inline;
+    }
+
+    .speciality-wrapper .main-title .desktop-title {
+        display: none;
+    }
+}
+
+/* Desktop title visibility */
+@media (min-width: 768px) {
+    .speciality-wrapper .main-title .mobile-title {
+        display: none;
+    }
+
+    .speciality-wrapper .main-title .desktop-title {
+        display: inline;
     }
 }
 
@@ -39,6 +73,22 @@
     /* tracking-wider */
     margin-bottom: 0.75rem;
     /* mb-3 */
+    text-align: center !important;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile-specific centering for OUR SPECIALTIES */
+@media (max-width: 767px) {
+    .speciality-wrapper .big-text {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 /* Description Text */
@@ -135,7 +185,6 @@
     color: var(--title-color);
     border: none;
     background-color: var(--primary-color);
-    margin-top: 30px;
 
     &:hover {
         transform: scale(1.1);
@@ -187,6 +236,7 @@
     border-radius: 14px;
 }
 
+/* Arrow Positioning */
 .previous-arrow,
 .next-arrow {
     display: flex;
@@ -196,10 +246,12 @@
     background-color: var(--secondary-color);
     height: 40px;
     width: 40px;
-    bottom: 50%;
+    top: 50%;
+    transform: translateY(-50%);
     border-radius: 50%;
     z-index: 2;
     color: white;
+    cursor: pointer;
 }
 
 .previous-arrow {
@@ -208,6 +260,11 @@
 
 .next-arrow {
     right: 5rem;
+}
+
+/* Margin for View All Button */
+.mt-16 {
+    margin-top: 2rem;
 }
 
 /* Responsive */
@@ -238,13 +295,26 @@
         max-width: 100%;
     }
 
-    .specialty-btn {
-        margin-top: 80px;
+    /* FIXED: Compact spacing for button */
+    .mt-16 {
+        margin-top: 1.5rem;
     }
 
+    /* FIXED: Position arrows beside the card */
     .previous-arrow,
     .next-arrow {
-        bottom: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+    }
+
+    .previous-arrow {
+        left: 10px;
+    }
+
+    .next-arrow {
+        right: 10px;
     }
 }
 
@@ -254,4 +324,15 @@
         height: 250px;
     }
 
+    /* FIXED: Even more compact on smaller mobile */
+    .mt-16 {
+        margin-top: 1rem;
+    }
+
+    /* Make arrows smaller on very small screens */
+    .previous-arrow,
+    .next-arrow {
+        width: 32px;
+        height: 32px;
+    }
 }

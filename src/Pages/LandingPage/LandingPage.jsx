@@ -1,11 +1,12 @@
+import { useState } from "react";
 import "./LandingPage.css";
 import HospitalHeroSection from "../../Components/heroSection";
 import WhyChooseUs from "../../Components/chooseUs";
 import PatientTools from "../../Components/patientTools";
 import Testimonials from "../../Components/testimonials";
+import HeroModal from "../../Components/HeroModal";
 
 // import SEO from "../utils/SEO";
-import DirectorsTabs from "./DirectorsTabs";
 import Specialties from "./Specialties";
 import Update from "./Update";
 import FAQCallbackSection from "./FAQCallbackSection";
@@ -14,6 +15,8 @@ import LeadershipTeam from "../../Components/LeadershipTeam";
 import BookAppointment from "../../Components/bookingModal";
 
 const LandingPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (<>
     {/* <SEO description={LANDINGPAGE_DESC} title={LANDINGPAGE_TITLE} keywords={LANDINGPAGE_KEYWORDS}/> */}
     <div className="universal-component-wrapper">
@@ -22,7 +25,7 @@ const LandingPage = () => {
       < LeadershipTeam />
       <Specialties />
       <WhyChooseUs />
-      <PatientTools />
+      <PatientTools onOpenModal={() => setIsModalOpen(true)} />
       <Testimonials />
 
       {/* FAQ + BookAppointment Wrapper for absolute positioning */}
@@ -31,6 +34,9 @@ const LandingPage = () => {
         <BookAppointment />
       </div>
     </div>
+
+    {/* Hero Modal */}
+    <HeroModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
   </>
   );
 };

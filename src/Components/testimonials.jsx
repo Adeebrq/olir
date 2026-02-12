@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 
 const Testimonials = () => {
-  const [activeTab, setActiveTab] = useState('patients');
+  const [activeTab, setActiveTab] = useState('doctors');
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-blue-50 overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto px-4 mb-12">
         <div className="flex flex-col items-start mb-8">
-          <div className="flex space-x-4 mb-6">
+          {/* <div className="flex space-x-4 mb-6">
             <button 
               onClick={() => setActiveTab('patients')}
               className={`px-6 py-2 rounded-full cursor-pointer  text-xs font-bold tracking-wider transition-colors ${
@@ -29,12 +29,12 @@ const Testimonials = () => {
             >
               DOCTOR VIDEOS
             </button>
-          </div>
+          </div> */}
           <h2 className="text-4xl font-bold text-[#002D3A] mb-4 tracking-tight">
             {activeTab === 'patients' ? 'TESTIMONIALS' : 'DOCTOR VIDEOS'}
           </h2>
           <p className="text-gray-600 max-w-2xl">
-            {activeTab === 'patients' 
+            {activeTab === 'patients'
               ? 'We leave no stone unturned to deliver quality healthcare to our patients. This is what our patients have to say about us'
               : 'Expert insights and guidance from our experienced medical professionals'
             }
@@ -43,7 +43,7 @@ const Testimonials = () => {
       </div>
 
       {activeTab === 'patients' && <PatientsCarousel />}
-      {activeTab === 'doctors' && <DoctorsCarousel />}
+      {activeTab === 'doctors' && <ReelsCarousel />}
     </section>
   );
 };
@@ -55,9 +55,8 @@ const PatientsCarousel = () => (
       return (
         <div key={rowIndex} className="relative flex overflow-hidden w-full mask-gradient">
           <div
-            className={`flex gap-6 py-2 ${
-              rowIndex % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'
-            }`}
+            className={`flex gap-6 py-2 ${rowIndex % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'
+              }`}
           >
             {duplicatedItems.map((item, index) =>
               item.type === 'media' ? (
@@ -103,60 +102,100 @@ const PatientsCarousel = () => (
   </div>
 );
 
-const DoctorsCarousel = () => (
-  <div className="flex flex-col gap-8">
-    {doctorRows.map((row, rowIndex) => {
-      const duplicatedItems = [...row.items, ...row.items];
-      return (
-        <div key={rowIndex} className="relative flex overflow-hidden w-full mask-gradient">
-          <div
-            className={`flex gap-6 py-2 ${
-              rowIndex % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'
-            }`}
-          >
-            {duplicatedItems.map((item, index) =>
-              item.type === 'media' ? (
-                <MediaCard key={`${rowIndex}-${index}`} img={item.img} label={item.label} isVideo={item.isVideo} />
-              ) : (
-                <DoctorCard
-                  key={`${rowIndex}-${index}`}
-                  name={item.name}
-                  specialty={item.specialty}
-                  bio={item.bio}
-                  bg={item.bg}
-                />
-              )
-            )}
-          </div>
-        </div>
-      );
-    })}
+// const DoctorsCarousel = () => (
+//   <div className="flex flex-col gap-8">
+//     {doctorRows.map((row, rowIndex) => {
+//       const duplicatedItems = [...row.items, ...row.items];
+//       return (
+//         <div key={rowIndex} className="relative flex overflow-hidden w-full mask-gradient">
+//           <div
+//             className={`flex gap-6 py-2 ${rowIndex % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'
+//               }`}
+//           >
+//             {duplicatedItems.map((item, index) =>
+//               item.type === 'media' ? (
+//                 <MediaCard key={`${rowIndex}-${index}`} img={item.img} label={item.label} isVideo={item.isVideo} />
+//               ) : (
+//                 <DoctorCard
+//                   key={`${rowIndex}-${index}`}
+//                   name={item.name}
+//                   specialty={item.specialty}
+//                   bio={item.bio}
+//                   bg={item.bg}
+//                 />
+//               )
+//             )}
+//           </div>
+//         </div>
+//       );
+//     })}
+//
+//     <style>{`
+//       @keyframes marquee {
+//         0% { transform: translateX(0); }
+//         100% { transform: translateX(-50%); }
+//       }
+//       @keyframes marquee-reverse {
+//         0% { transform: translateX(-50%); }
+//         100% { transform: translateX(0); }
+//       }
+//       .animate-marquee {
+//         animation: marquee 40s linear infinite;
+//       }
+//       .animate-marquee-reverse {
+//         animation: marquee-reverse 40s linear infinite;
+//       }
+//       .mask-gradient {
+//         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+//       }
+//       .animate-marquee:hover,
+//       .animate-marquee-reverse:hover {
+//         animation-play-state: paused;
+//       }
+//     `}</style>
+//   </div>
+// );
 
-    <style>{`
-      @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      @keyframes marquee-reverse {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
-      }
-      .animate-marquee {
-        animation: marquee 40s linear infinite;
-      }
-      .animate-marquee-reverse {
-        animation: marquee-reverse 40s linear infinite;
-      }
-      .mask-gradient {
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      }
-      .animate-marquee:hover,
-      .animate-marquee-reverse:hover {
-        animation-play-state: paused;
-      }
-    `}</style>
-  </div>
-);
+const ReelsCarousel = () => {
+  const reelLinks = [
+    "https://www.instagram.com/reel/DSfHjC0gm2Y/embed",
+    "https://www.instagram.com/reel/DSg9j1-gTji/embed",
+    "https://www.instagram.com/reel/DT24HZegZIc/embed",
+
+  ];
+
+  return (
+    <div className="w- py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8">
+          {reelLinks.map((link, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-2xl shadow-xl bg-black"
+              style={{
+                width: '100%',
+                maxWidth: '380px',
+                aspectRatio: '9/16',
+                minHeight: '600px',
+                maxHeight: '680px',
+              }}
+            >
+              <iframe
+                src={link}
+                className="absolute inset-0 w-full h-full border-0"
+                allowFullScreen
+                scrolling="no"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                loading="lazy"
+                title={`Instagram Reel ${index + 1}`}
+              ></iframe>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const MediaCard = ({ img, label, isVideo }) => (
   <div className="relative w-[280px] h-[200px] md:w-[320px] md:h-[240px] flex-shrink-0 rounded-3xl overflow-hidden cursor-pointer group shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-black">

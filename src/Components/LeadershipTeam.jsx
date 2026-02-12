@@ -1,38 +1,42 @@
 import React, { useState } from 'react';
-import { Award, Heart, Building2, Stethoscope } from 'lucide-react';
+import { Award, Heart, Building2, Stethoscope, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import doc1 from '../assets/doc1.svg';
 import doc2 from '../assets/doc2.svg';
 import doc3 from '../assets/doc3.svg';
 import doc4 from '../assets/doc4.svg';
 
 const LeadershipTeam = () => {
-    const [activeDoctor, setActiveDoctor] = useState(1); // Default active is center-left (index 1)
+    const navigate = useNavigate();
+    const [activeDoctor, setActiveDoctor] = useState(2); // Default active is Dr. Nandini (index 2)
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const teamMembers = [
         {
             id: 0,
             name: "Dr.F.Fakhruddin",
-            degree: "M.S.Ortho",
+            degree: "MBBS, MS - Orthopaedics ",
             role: "Co-Founder",
             image: doc1,
+            route: "/doctors/Dr-Fakhruddin",
             tooltips: {
                 topLeft: {
-                    text: "MBBS, MD - CARDIOLOGY",
+                    text: "ARTHROPLASTY EXPERTISE",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "DM - INTERVENTIONAL CARDIOLOGY",
+                    text: "TRAUMA RECONSTRUCTION",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "38 YEARS OF EXPERIENCE",
+                    text: "SPORTS ORTHOPAEDICS",
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
                 },
                 bottomRight: {
-                    text: "500+ SUCCESSFUL PROCEDURES",
+                    text: "JOINT PRESERVATION",
                     icon: <Heart className="w-4 h-4" />,
                     iconBg: "bg-pink-400"
                 }
@@ -40,28 +44,29 @@ const LeadershipTeam = () => {
         },
         {
             id: 1,
-            name: "Dr.Sathish Kumar. T.E",
-            degree: "MBBS, MS, MCH",
+            name: "Dr. T. E. Sathish Kumar",
+            degree: "MBBS, MS General Surgery, MCh Neurosurgery",
             role: "Director",
             image: doc2,
+            route: "/doctors/Dr-Sathish-Kumar",
             tooltips: {
                 topLeft: {
-                    text: "MBBS, MCH - NEURO SURGERY",
+                    text: "NEURO SURGERY",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "DNB - NEUROSURGERY",
+                    text: "SPINE INTERVENTION",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "43 YEARS OF EXPERIENCE",
+                    text: "MICROSURGICAL PRECISION",
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
                 },
                 bottomRight: {
-                    text: "1000+ BRAIN SURGERIES",
+                    text: "COMPLEX NEUROSURGERY",
                     icon: <Heart className="w-4 h-4" />,
                     iconBg: "bg-pink-400"
                 }
@@ -70,27 +75,28 @@ const LeadershipTeam = () => {
         {
             id: 2,
             name: "Dr.Nandini",
-            degree: "MS, PCHM",
+            degree: "MBBS, MD (Pathology) ",
             role: "Co-Founder",
             image: doc3,
+            route: "/doctors/Dr-Nandini-Govindarajan",
             tooltips: {
                 topLeft: {
-                    text: "MBBS, MS - ORTHOPEDICS",
+                    text: "DIAGNOSTIC ONCOLOGY",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "DNB - SPINE SURGERY",
+                    text: "CLINICAL GOVERNANCE",
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "35 YEARS OF EXPERIENCE",
+                    text: "QUALITY SYSTEMS",
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
                 },
                 bottomRight: {
-                    text: "800+ SPINE SURGERIES",
+                    text: "PATIENT SAFETY",
                     icon: <Heart className="w-4 h-4" />,
                     iconBg: "bg-pink-400"
                 }
@@ -102,32 +108,45 @@ const LeadershipTeam = () => {
             degree: "MBBS, D.Ortho, DNB (Ortho)",
             role: "Co-Founder",
             image: doc4,
+            route: "/doctors/Dr-Naga-Praven",
             tooltips: {
                 topLeft: {
-                    text: "FOUNDER AND CHAIRMAN",
-                    icon: <Building2 className="w-4 h-4" />,
-                    iconBg: "bg-blue-500"
+                    text: "FRACTURE FIXATION",
+                    icon: <Stethoscope className="w-4 h-4" />,
+                    iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "SUPER SPECIALITY HOSPITAL",
-                    icon: <Building2 className="w-4 h-4" />,
-                    iconBg: "bg-blue-500"
+                    text: "ARTHROSCOPIC REPAIR",
+                    icon: <Stethoscope className="w-4 h-4" />,
+                    iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "HUNDREDS OF SUCCESSFUL SURGERIES",
-                    icon: <Heart className="w-4 h-4" />,
-                    iconBg: "bg-pink-400"
-                },
-                bottomRight: {
-                    text: "HEALTHCARE VISIONARY",
+                    text: "DEGENERATIVE DISORDERS",
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
+                },
+                bottomRight: {
+                    text: "FUNCTIONAL REHABILITATION",
+                    icon: <Heart className="w-4 h-4" />,
+                    iconBg: "bg-pink-400"
                 }
             }
         }
     ];
 
-    const Tooltip = ({ tooltip, isActive, position }) => {
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
+    };
+
+    const handleDoctorClick = (route) => {
+        navigate(route);
+    };
+
+    const Tooltip = ({ tooltip, isActive, position, isMobile = false, extraBottomSpacing = false }) => {
         if (!tooltip) return null;
 
         const isTop = position === 'topLeft' || position === 'topRight';
@@ -136,32 +155,51 @@ const LeadershipTeam = () => {
         // Position tooltips to extend left/right from center point
         let positionClass = '';
         let connectorClass = '';
-        let connectorHeight = 'h-14';
+        // Reduce connector height on mobile to pull tooltips closer
+        let connectorHeight = isMobile ? 'h-8' : 'h-14';
+        
+        // Tighter vertical positioning on mobile
+        const topOffset = isMobile ? '-top-14' : '-top-28';
+        // Apply extra spacing for specific cases (like Dr. Fakhruddin) on mobile
+        const bottomOffset = isMobile ? (extraBottomSpacing ? '-bottom-24' : '-bottom-14') : '-bottom-28';
+        
+        // Scale down mobile tooltips and set origin to shrink towards center
+        const mobileScale = isMobile ? 'scale-[0.8]' : '';
+        let originClass = '';
 
         if (position === 'topLeft') {
             // Extend to the left from center
-            positionClass = '-top-28 right-1/2 mr-2';
+            // Reduce margin on mobile to bring closer to center line
+            const margin = isMobile ? 'mr-0.5' : 'mr-2';
+            positionClass = `${topOffset} right-1/2 ${margin}`;
             connectorClass = 'right-0';
+            originClass = 'origin-bottom-right';
         }
         if (position === 'topRight') {
             // Extend to the right from center
-            positionClass = '-top-28 left-1/2 ml-2';
+            const margin = isMobile ? 'ml-0.5' : 'ml-2';
+            positionClass = `${topOffset} left-1/2 ${margin}`;
             connectorClass = 'left-0';
+            originClass = 'origin-bottom-left';
         }
         if (position === 'bottomLeft') {
             // Extend to the left from center
-            positionClass = '-bottom-28 right-1/2 mr-2';
+            const margin = isMobile ? 'mr-0.5' : 'mr-2';
+            positionClass = `${bottomOffset} right-1/2 ${margin}`;
             connectorClass = 'right-0';
+            originClass = 'origin-top-right';
         }
         if (position === 'bottomRight') {
             // Extend to the right from center
-            positionClass = '-bottom-28 left-1/2 ml-2';
+            const margin = isMobile ? 'ml-0.5' : 'ml-2';
+            positionClass = `${bottomOffset} left-1/2 ${margin}`;
             connectorClass = 'left-0';
+            originClass = 'origin-top-left';
         }
 
         return (
             <div
-                className={`absolute ${positionClass} transition-all duration-500 z-10 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                className={`absolute ${positionClass} ${originClass} ${mobileScale} transition-all duration-500 z-10 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                     }`}
             >
                 {/* Dashed connector line */}
@@ -197,14 +235,14 @@ const LeadershipTeam = () => {
     };
 
     return (
-        <section className="py-10 px-4 bg-white overflow-visible">
+        <section className="py-8 px-4 bg-white overflow-visible">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-10">
-                    <p className="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                <div className="text-center mb-16">
+                    <p className="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-2">
                         Leadership Team
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
                         Guided By Excellence, United In Care
                     </h2>
                     <p className="text-gray-600 text-base max-w-4xl mx-auto leading-relaxed">
@@ -214,14 +252,125 @@ const LeadershipTeam = () => {
                     </p>
                 </div>
 
-                {/* Team Members */}
-                <div className="py-32 relative">
+                {/* Mobile Slider (<= 768px) */}
+                <div className="md:hidden relative py-12 w-full max-w-sm mx-auto">
+                    {/* Navigation Arrows */}
+                    <button 
+                        onClick={prevSlide} 
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/80 rounded-full shadow-md backdrop-blur-sm transition-transform active:scale-95 border border-gray-100 touch-manipulation"
+                        aria-label="Previous Doctor"
+                    >
+                        <ChevronLeft className="w-5 h-5 text-teal-700" />
+                    </button>
+                    <button 
+                        onClick={nextSlide} 
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/80 rounded-full shadow-md backdrop-blur-sm transition-transform active:scale-95 border border-gray-100 touch-manipulation"
+                        aria-label="Next Doctor"
+                    >
+                        <ChevronRight className="w-5 h-5 text-teal-700" />
+                    </button>
+
+                    {/* Slider Track */}
+                    <div className="overflow-hidden w-full px-2 pt-24 pb-16">
+                        <div 
+                            className="flex transition-transform duration-500 ease-in-out will-change-transform"
+                            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                        >
+                            {teamMembers.map((member, index) => (
+                                <div key={member.id} className="w-full flex-shrink-0 flex justify-center px-4">
+                                     <div 
+                                        className="relative flex flex-col items-center w-full transform scale-90 origin-center cursor-pointer"
+                                        onClick={() => handleDoctorClick(member.route)}
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                handleDoctorClick(member.route);
+                                            }
+                                        }}
+                                     >
+                                        
+                                        {/* Top-Left Tooltip */}
+                                        <Tooltip
+                                            tooltip={member.tooltips.topLeft}
+                                            isActive={currentSlide === index}
+                                            position="topLeft"
+                                            isMobile={true}
+                                        />
+
+                                        {/* Top-Right Tooltip */}
+                                        <Tooltip
+                                            tooltip={member.tooltips.topRight}
+                                            isActive={currentSlide === index}
+                                            position="topRight"
+                                            isMobile={true}
+                                        />
+
+                                        {/* Image Container */}
+                                        <div className="relative w-full overflow-visible z-20">
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-auto object-contain grayscale-0" 
+                                            />
+                                            
+                                            {/* Name Pill */}
+                                            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center px-4 z-30">
+                                                <div className="bg-[#2596be] text-white px-6 py-2 rounded-2xl shadow-lg flex flex-col items-center w-[90%] max-w-[240px]">
+                                                    <p className="text-sm font-bold whitespace-nowrap">
+                                                        {member.name}
+                                                    </p>
+                                                    <p className="text-xs font-medium whitespace-nowrap mt-0.5 opacity-90">
+                                                        {member.degree}
+                                                    </p>
+                                                    <p className="text-[10px] font-semibold uppercase tracking-wider mt-0.5 opacity-80">
+                                                        {member.role}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Bottom-Left Tooltip */}
+                                        <Tooltip
+                                            tooltip={member.tooltips.bottomLeft}
+                                            isActive={currentSlide === index}
+                                            position="bottomLeft"
+                                            isMobile={true}
+                                            extraBottomSpacing={index === 0}
+                                        />
+
+                                        {/* Bottom-Right Tooltip */}
+                                        <Tooltip
+                                            tooltip={member.tooltips.bottomRight}
+                                            isActive={currentSlide === index}
+                                            position="bottomRight"
+                                            isMobile={true}
+                                            extraBottomSpacing={index === 0}
+                                        />
+
+                                     </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Desktop Grid (>= 769px) */}
+                <div className="py-24 relative hidden md:block">
                     <div className="flex justify-center items-end max-w-6xl mx-auto">
                         {teamMembers.map((member) => (
                             <div
                                 key={member.id}
-                                className="relative flex flex-col items-center cursor-pointer -mx-12"
+                                className="relative flex flex-col items-center cursor-pointer -mx-12 transition-transform hover:scale-105"
                                 onMouseEnter={() => setActiveDoctor(member.id)}
+                                onClick={() => handleDoctorClick(member.route)}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        handleDoctorClick(member.route);
+                                    }
+                                }}
                             >
                                 {/* Top-Left Tooltip */}
                                 <Tooltip
@@ -279,8 +428,6 @@ const LeadershipTeam = () => {
                             </div>
                         ))}
                     </div>
-
-
                 </div>
             </div>
         </section>

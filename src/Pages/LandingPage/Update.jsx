@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../../assets/img1.webp"
-import image2 from "../../assets/img2.webp"
-import image3 from "../../assets/img3.webp"
+// import image1 from "../../assets/img1.webp"
+// import image2 from "../../assets/img2.webp"
+// import image3 from "../../assets/img3.webp"
 
 
 const Update = () => {

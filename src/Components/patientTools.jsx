@@ -2,32 +2,47 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Calendar, Package, FileText, CreditCard, ChevronRight, ChevronLeft } from 'lucide-react';
 
-const PatientTools = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../Pages/LandingPage/Specialties.css"; // Reuse existing styles or ensure slider-container is styled
+
+const PatientTools = ({ onOpenModal }) => {
   const navigate = useNavigate();
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
   const updates = [
-    {
-      title: "OLIR Super Speciality Hospital & University of Leicester launch Digital Health Centre in India",
-      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop"
-    },
-    {
-      title: "OLIR Super Speciality Hospital Neuro Conclave 2024",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop"
-    },
-    {
-      title: "OLIR Super Speciality Hospital Hospitals completes 500 robotic cardiac procedures",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop"
-    }
+    "https://www.instagram.com/p/DTxdRX9kp16/embed",
+    "https://www.instagram.com/p/DT2UwE5kp6y/embed",
+    "https://www.instagram.com/p/DT2dwAGEgOL/embed"
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % updates.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + updates.length) % updates.length);
-  };
 
   return (
     <div className="bg-[#F5F9FC] font-sans">
@@ -37,14 +52,14 @@ const PatientTools = () => {
 
           {/* Header Section */}
           <div className="text-center mb-12">
-            <p className="text-[#0099CC] font-bold text-xs uppercase tracking-wider mb-3">
+            <p className="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3">
               PATIENT TOOLS
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#002D3A] mb-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
               Explore Tailored Health Packages And Preventive Check-Ups Designed For Your Needs.
             </h2>
             <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
-              Access everything you need in one place—book appointments, view your medical records securely,
+              Access everything you need in one place book appointments, view your medical records securely,
               manage insurance and billing, and find answers to common patient questions, all designed for your convenience and peace of mind.
             </p>
           </div>
@@ -56,7 +71,7 @@ const PatientTools = () => {
               bgColor="bg-[#E6F7FF]"
               title="Book Appointment"
               desc="Schedule your visit with our specialists online"
-              ctaText="Get Appointment"
+              ctaText="Get an appointment"
               ctaColor="text-[#0099CC]"
             />
             <FeatureCard
@@ -66,6 +81,7 @@ const PatientTools = () => {
               desc="Comprehensive health checkup plans for all ages"
               ctaText="View"
               ctaColor="text-[#00CC99]"
+              onOpenModal={onOpenModal}
             />
             <FeatureCard
               icon={<FileText className="w-7 h-7 text-[#9966CC]" />}
@@ -78,9 +94,9 @@ const PatientTools = () => {
             <FeatureCard
               icon={<CreditCard className="w-7 h-7 text-[#FF9933]" />}
               bgColor="bg-[#FFF3E6]"
-              title="Insurance & Billing"
+              title="Insurance"
               desc="View billing info and insurance coverage details"
-              ctaText="Get Started"
+              ctaText="View"
               ctaColor="text-[#FF9933]"
             />
           </div>
@@ -101,67 +117,44 @@ const PatientTools = () => {
                 What's New At OLIR Super Speciality Hospital
               </h2>
             </div>
-            <button
-              onClick={() => navigate('/comingsoon')}
+            <a
+              href="https://www.instagram.com/olir.hospital/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:flex items-center gap-2 bg-[#FFD700] hover:bg-[#FFC700] text-gray-900 font-bold px-6 py-3 rounded-full transition-colors"
             >
               EXPLORE MORE
               <ChevronRight className="w-5 h-5" />
-            </button>
+            </a>
           </div>
 
-          {/* Carousel */}
-          <div className="relative">
-            <div className="flex gap-6 overflow-hidden">
-              {updates.map((update, index) => (
-                <div
-                  key={index}
-                  className={`flex-shrink-0 w-full md:w-[calc(33.333%-16px)] transition-transform duration-500 ease-in-out`}
-                  style={{
-                    transform: `translateX(-${currentSlide * 100}%)`,
-                  }}
-                >
-                  <div className="bg-[#004D6C] rounded-2xl overflow-hidden shadow-xl h-[400px] relative group">
-                    <img
-                      src={update.image}
-                      alt={update.title}
-                      className="w-full h-full object-cover opacity-70 group-hover:opacity-80 transition-opacity"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-white/80 text-xs font-semibold mb-2">Latest Update</p>
-                      <h3 className="text-white text-xl font-bold leading-tight">
-                        {update.title}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors cursor-pointer"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors cursor-pointer"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
+          {/* Instagram Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {updates.map((embedUrl, index) => (
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src={embedUrl}
+                  className="w-full h-[600px] border-0"
+                  allowFullScreen
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  loading="lazy"
+                  title={`Instagram Post ${index + 1}`}
+                ></iframe>
+              </div>
+            ))}
           </div>
 
           {/* Mobile Explore Button */}
-          <button
-            onClick={() => navigate('/comingsoon')}
+          <a
+            href="https://www.instagram.com/olir.hospital/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="md:hidden mt-8 w-full flex items-center justify-center gap-2 bg-[#FFD700] hover:bg-[#FFC700] text-gray-900 font-bold px-6 py-3 rounded-full transition-colors"
           >
             EXPLORE MORE
             <ChevronRight className="w-5 h-5" />
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -169,17 +162,71 @@ const PatientTools = () => {
 };
 
 // Reusable Card Component
-const FeatureCard = ({ icon, bgColor, title, desc, ctaText, ctaColor }) => (
+const FeatureCard = ({ icon, bgColor, title, desc, ctaText, ctaColor, onOpenModal }) => (
   <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 flex flex-col items-center h-full">
     <div className={`w-16 h-16 rounded-full ${bgColor} flex items-center justify-center mb-5`}>
       {icon}
     </div>
     <h3 className="text-lg font-bold text-[#002D3A] mb-3">{title}</h3>
     <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">{desc}</p>
-    <Link to="/comingsoon" className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto`}>
-      {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
-    </Link>
+    {title === 'Book Appointment' ? (
+      <Link
+        to="/bookappointment"
+        className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto cursor-pointer`}
+      >
+        {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
+      </Link>
+    ) : title === 'Health Packages' ? (
+      <Link
+        to="/HealthPackages"
+        className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto cursor-pointer`}
+      >
+        {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
+      </Link>
+    ) : title === 'Insurance' ? (
+      <Link
+        to="/insurance"
+        className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto cursor-pointer`}
+      >
+        {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
+      </Link>
+    ) : title === 'Events & Camps' ? (
+      <Link
+        to="/events"
+        className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto cursor-pointer`}
+      >
+        {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
+      </Link>
+    ) : (
+      <Link to="/comingsoon" className={`${ctaColor} text-sm font-semibold flex items-center hover:underline mt-auto`}>
+        {ctaText} <ChevronRight className="w-4 h-4 ml-1" />
+      </Link>
+    )}
   </div>
 );
 
 export default PatientTools;
+
+const NextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors cursor-pointer z-10"
+    >
+      <ChevronRight className="w-6 h-6 text-white" />
+    </button>
+  );
+};
+
+const PrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors cursor-pointer z-10"
+    >
+      <ChevronLeft className="w-6 h-6 text-white" />
+    </button>
+  );
+};

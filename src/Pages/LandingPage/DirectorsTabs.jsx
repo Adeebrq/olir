@@ -1,10 +1,10 @@
 
 import React, { useState } from "react";
 import "./DirectorsTabs.css"; // same CSS you wrote (see below)
-import image1 from "../../assets/senthil.jpg"
-import image2 from "../../assets/charumathi.png"
-import image3 from "../../assets/DrNatarajan.png"
-import image4 from "../../assets/choa.png"
+// import image1 from "../../assets/senthil.jpg"
+// import image2 from "../../assets/charumathi.png"
+// import image3 from "../../assets/DrNatarajan.png"
+// import image4 from "../../assets/choa.png"
 
 const DirectorsTabs = () => {
   const [activeTab, setActiveTab] = useState("chairman");
@@ -71,7 +71,7 @@ const DirectorsTabs = () => {
             <br />
             <p className="text">
               In June 2006, he launched the Xcellent Care Centre in
-              Ekkattuthangal, Chennai. By September 2010, he opened the Xcellent
+              Ekkattuthangal, Chennai. By September 2014, he opened the Xcellent
               Care Super Specialty Hospital (P) Ltd in Velachery, where he
               serves as Chairman. This hospital caters to a diverse patient
               base, supported by 40 specialized visiting consultants and 24/7
@@ -79,10 +79,10 @@ const DirectorsTabs = () => {
             </p>
           </div>
           <div className="content-image">
-            <img
+            {/* <img
               src={image1}
               alt="Chairman"
-            />
+            /> */}
           </div>
         </div>
 
@@ -119,10 +119,10 @@ const DirectorsTabs = () => {
             </p>
           </div>
           <div className="content-image">
-            <img
+            {/* <img
               src={image2}
               alt="Managing Director"
-            />
+            /> */}
           </div>
         </div>
 
@@ -158,10 +158,10 @@ const DirectorsTabs = () => {
             </p>
           </div>
           <div className="content-image">
-            <img
+            {/* <img
               src={image3}
               alt="Medical Director"
-            />
+            /> */}
           </div>
         </div>
 
@@ -200,10 +200,10 @@ const DirectorsTabs = () => {
             </p>
           </div>
           <div className="content-image">
-            <img
+            {/* <img
               src={image4}
               alt="Pranic Healing"
-            />
+            /> */}
           </div>
         </div>
       </div>

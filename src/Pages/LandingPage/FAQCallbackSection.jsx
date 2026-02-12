@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './FAQCallbackSection.css';
-import doctorImage from "../../assets/doctor-image.png"
 
 const FAQCallbackSection = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -10,27 +9,27 @@ const FAQCallbackSection = () => {
     const faqs = [
         {
             question: "What makes Olir Super Speciality Hospital one of the best hospitals in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "At Olir Hospital, medical expertise is matched with compassion. Every patient is treated with care, dignity, and personal attention."
         },
         {
             question: "Why do patients prefer Olir Super Speciality Hospital for advanced treatment in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "Patients choose Olir Hospital for doctors who listen and treatments they can trust. Advanced care is delivered with clarity and empathy at every step."
         },
         {
             question: "What super speciality departments are available at Olir Super Speciality Hospital in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "Olir Hospital brings multiple super speciality departments like Neurology, Orthopaedics, Cardiology, Nephrology and more under one roof. This ensures coordinated care, comfort, and continuity throughout treatment."
         },
         {
             question: "Does Olir Super Speciality Hospital provide 24/7 emergency care in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "Yes, our emergency services are available day and night. Skilled teams are always ready to respond quickly when it matters most."
         },
         {
             question: "Why is Olir Super Speciality Hospital trusted as an advanced surgery hospital in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "Surgeries at Olir Hospital are led by experienced specialists using modern technology. Patient safety, comfort, and recovery remain the highest priorities."
         },
         {
             question: "How does Olir Super Speciality Hospital ensure quality care with specialist doctors in Chennai?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            answer: "Each patient is cared for by qualified specialists following proven clinical practices. Quality checks, teamwork, and constant monitoring guide every decision."
         }
     ];
 
@@ -58,7 +57,7 @@ const FAQCallbackSection = () => {
     };
 
     return (
-        <div className="faq-callback-container pb-64">
+        <div className="faq-callback-container pb-64 max-md:pb-96">
             <div className="header-section">
                 <p className='title bold'>Frequently Asked Questions</p>
                 <p className="header-subtitle text">
