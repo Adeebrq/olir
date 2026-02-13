@@ -47,7 +47,7 @@ const DepartmentDetail = () => {
             <span className="font-bold">{department.title}</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col-reverse lg:flex-row gap-12">
             
             {/* Left Content Column */}
             <div className="flex-1">

@@ -251,14 +251,37 @@ const AboutLeadershipTeam = () => {
                     .doctor-card {
                         width: 260px !important;
                         height: 360px !important;
+                        /* Force hover shadow on mobile */
+                        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
                     }
 
-                    .doctor-card:hover .blue-strip {
-                        width: 25%;
+                    /* Force blue strip visible */
+                    .blue-strip {
+                        width: 25% !important;
                     }
 
+                    /* Force department text visible */
                     .department-text {
                         font-size: 16px;
+                        opacity: 1 !important;
+                    }
+
+                    /* Force image transform */
+                    .doctor-image {
+                        transform: scale(1.08) translateX(15%) !important;
+                    }
+
+                    /* Force bottom overlay visible */
+                    .bottom-overlay {
+                        opacity: 1 !important;
+                        transform: translateY(0) !important;
+                    }
+
+                    /* Force extended credentials visible */
+                    .extended-credentials {
+                        opacity: 1 !important;
+                        max-height: 400px !important;
+                        pointer-events: auto !important;
                     }
                 }
             `}</style>
