@@ -219,7 +219,7 @@ const EventsPage = () => {
       </div>
 
       {/* Booking Modal */}
-      <div className="max-w-4xl mx-auto px-4 pb-8">
+      <div className="max-w-7xl mx-auto px-4 pb-8">
         <BookAppointment isInline={true} />
       </div>
     </div>

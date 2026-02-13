@@ -1,0 +1,123 @@
+/* FAQ Container */
+.blog-faq-wrapper {
+    background: transparent;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Header */
+.blog-faq-header {
+    margin-bottom: 30px;
+}
+
+.blog-faq-subtitle {
+    margin-top: 10px;
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* FAQ Grid */
+.blog-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .blog-faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-faq-wrapper {
+        padding: 24px;
+    }
+}
+
+/* FAQ Item */
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    border: none;
+    height: fit-content;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Question Button */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: white;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0B3D4C;
+    transition: background-color 0.3s ease;
+    min-height: 80px;
+    /* Ensure consistent height for alignment */
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+.faq-question span:first-child {
+    flex: 1;
+    padding-right: 16px;
+    line-height: 1.5;
+}
+
+/* FAQ Icon */
+.faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a8ca8;
+    border-radius: 50%;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.faq-icon.active {
+    transform: rotate(45deg);
+    background-color: #156b80;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: white;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.faq-answer-content {
+    padding: 0 24px 24px 24px;
+}
+
+.faq-answer-content p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+}

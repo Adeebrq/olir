@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
-import BannerSection from '../Components/Department/BannerSection';
 import { specialties } from '../utils/departmentData';
 import DepartmentBlogSection from '../Components/Department/DepartmentBlogSection';
 import FAQCallbackSection from './LandingPage/FAQCallbackSection';
@@ -27,10 +26,8 @@ const DepartmentDetail = () => {
 
   return (
     <div className="w-full">
-      {/* 1. Reusing the BannerSection as requested */}
-      <BannerSection />
 
-      <div className="max-w-7xl mx-auto px-4 py-10 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 py-10  mt-18 md:py-16">
         
         {/* Back Button */}
         <button 
@@ -174,7 +171,7 @@ const DepartmentDetail = () => {
 
       {/* FAQ & Booking Modal (Consistent with other pages) */}
       <div className="relative">
-          <FAQCallbackSection />
+          <FAQCallbackSection faqs={department.faqs} />
           <BookAppointment />
       </div>
 

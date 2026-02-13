@@ -103,14 +103,17 @@ const DoctorCard = ({ doctor }) => {
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    transform: translate(-50%, -50%) rotate(-90deg);
-                    color: white;
-                    font-size: 3.5rem; /* Adjusted slightly for long names? Reset to 4rem if strict */
-                    font-weight: 600;
-                    letter-spacing: 2px;
+                    transform: translate(-50%, -50%);
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                    letter-spacing: 0.2rem;
+                    text-transform: uppercase;
+                    writing-mode: vertical-rl;
+                    text-orientation: upright;
                     white-space: nowrap;
                     opacity: 1;
-                    transition: opacity 0.4s ease 0.2s;
+                    user-select: none;
                 }
 
                 /* Image container */
@@ -132,7 +135,8 @@ const DoctorCard = ({ doctor }) => {
                 }
 
                 /* Specific adjustment for unknown/default image to prevent floating/cutoff appearance */
-                .doctor-image[src*="doc1"] {
+                .doctor-image[src*="doc1"],
+                .doctor-image[src*="Unknown"] {
                     object-fit: cover;
                     object-position: top center;
                     transform: scale(1.1) translateY(20px);

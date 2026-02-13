@@ -49,7 +49,28 @@ export const specialties = [
       "Seizures or loss of consciousness",
       "Balance or coordination issues"
     ],
-    faqs: [] // Placeholder
+    faqs: [
+      {
+        question: "Do you treat stroke, epilepsy, and other neurological disorders?",
+        answer: "Comprehensive diagnosis and treatment are provided for stroke, epilepsy, migraines, neuropathies, and other neurological conditions."
+      },
+      {
+        question: "Is 24/7 emergency stroke care available?",
+        answer: "Emergency stroke management services are available round the clock."
+      },
+      {
+        question: "Are MRI and CT scan facilities available?",
+        answer: "Advanced imaging services, including MRI and CT scans, are available for accurate evaluation."
+      },
+      {
+        question: "Do you perform brain and spine surgeries?",
+        answer: "Brain and spine surgeries are performed by qualified neurosurgeons using established surgical protocols."
+      },
+      {
+        question: "When should a patient consult a neurologist?",
+        answer: "Consultation is advised for persistent headaches, seizures, weakness, numbness, or sudden speech disturbances."
+      }
+    ]
   },
   { 
     id: 2, 
@@ -86,7 +107,28 @@ export const specialties = [
       "Sudden injuries or fractures",
       "Post-surgery rehabilitation needs"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat fractures and joint conditions?",
+        answer: "Treatment is available for fractures, arthritis, back pain, and sports injuries."
+      },
+      {
+        question: "Is joint replacement surgery available?",
+        answer: "Knee and hip replacement procedures are performed by experienced orthopedic surgeons."
+      },
+      {
+        question: "Do you provide emergency trauma care?",
+        answer: "Orthopedic trauma services are available 24/7."
+      },
+      {
+        question: "Is physiotherapy available after surgery?",
+        answer: "Rehabilitation and physiotherapy services support post-operative recovery."
+      },
+      {
+        question: "What is the recovery period after joint replacement?",
+        answer: "Recovery varies by patient; rehabilitation plans are provided to ensure optimal outcomes."
+      }
+    ]
   },
   { 
     id: 3, 
@@ -122,7 +164,28 @@ export const specialties = [
       "Kidney pain or recurrent infections",
       "Fertility concerns"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat kidney stones and urinary disorders?",
+        answer: "Diagnosis and treatment are available for kidney stones, urinary tract infections, and other urological conditions."
+      },
+      {
+        question: "Is minimally invasive treatment for kidney stones available?",
+        answer: "Laser and other minimally invasive procedures are performed based on clinical evaluation."
+      },
+      {
+        question: "Do you manage prostate-related conditions?",
+        answer: "Evaluation and treatment for prostate enlargement and related disorders are provided."
+      },
+      {
+        question: "Are diagnostic services available for urological problems?",
+        answer: "Comprehensive laboratory and imaging facilities support accurate diagnosis."
+      },
+      {
+        question: "Is emergency urology care available?",
+        answer: "Emergency services are available for acute urological conditions."
+      }
+    ]
   },
   { 
     id: 4, 
@@ -158,7 +221,28 @@ export const specialties = [
       "Palpitations or irregular heartbeat",
       "Family history of heart disease"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Are cardiac diagnostic tests available?",
+        answer: "ECG, Echocardiography, TMT, and other cardiac diagnostics are available."
+      },
+      {
+        question: "Is emergency cardiac care available?",
+        answer: "Cardiac emergency services operate round the clock."
+      },
+      {
+        question: "Do you perform interventional cardiac procedures?",
+        answer: "Procedures such as angiography and angioplasty are performed when indicated."
+      },
+      {
+        question: "Are preventive heart check-up packages offered?",
+        answer: "Preventive cardiac screening packages are available."
+      },
+      {
+        question: "When should a cardiology consultation be sought?",
+        answer: "Consultation is recommended for chest pain, breathlessness, dizziness, or irregular heartbeat."
+      }
+    ]
   },
   { 
     id: 5, 
@@ -194,7 +278,28 @@ export const specialties = [
       "Fertility challenges",
       "Menopausal or postnatal concerns"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you provide maternity and delivery services?",
+        answer: "Comprehensive antenatal, delivery, and postnatal care services are available."
+      },
+      {
+        question: "Is painless delivery offered?",
+        answer: "Labor pain management options, including painless delivery, are available."
+      },
+      {
+        question: "Do you treat gynecological conditions such as PCOS?",
+        answer: "Diagnosis and treatment are provided for PCOS and other gynecological disorders."
+      },
+      {
+        question: "Are prenatal screening services available?",
+        answer: "Routine and advanced prenatal screening services are offered."
+      },
+      {
+        question: "Are female gynecologists available for consultation?",
+        answer: "Qualified female specialists are available."
+      }
+    ]
   },
   { 
     id: 6, 
@@ -229,7 +334,28 @@ export const specialties = [
       "Developmental delays or growth concerns",
       "Chronic illnesses or frequent hospitalizations"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Is pediatric consultation available?",
+        answer: "Pediatric services are available for newborns, infants, and adolescents."
+      },
+      {
+        question: "Are vaccination services provided?",
+        answer: "Immunization services are provided according to national guidelines."
+      },
+      {
+        question: "Is a Neonatal Intensive Care Unit (NICU) available?",
+        answer: "A fully equipped NICU is available."
+      },
+      {
+        question: "Do you treat common childhood illnesses?",
+        answer: "Diagnosis and management of pediatric infections and respiratory conditions are provided."
+      },
+      {
+        question: "When should emergency pediatric care be sought?",
+        answer: "Immediate medical attention is required for high fever, breathing difficulty, seizures, or dehydration."
+      }
+    ]
   },
   { 
     id: 7, 
@@ -264,7 +390,28 @@ export const specialties = [
       "Difficulty swallowing or unexplained weight loss",
       "Blood in stool or chronic diarrhea/constipation"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat digestive disorders?",
+        answer: "Evaluation and treatment of gastrointestinal conditions such as ulcers, IBS, and liver disorders are available."
+      },
+      {
+        question: "Are endoscopy services available?",
+        answer: "Diagnostic and therapeutic endoscopy services are offered."
+      },
+      {
+        question: "Do you manage liver diseases?",
+        answer: "Management of fatty liver, hepatitis, and other liver conditions is provided."
+      },
+      {
+        question: "Are advanced diagnostic services available?",
+        answer: "Laboratory and imaging support services are available for accurate diagnosis."
+      },
+      {
+        question: "When should a gastroenterology consultation be considered?",
+        answer: "Consultation is advised for persistent abdominal pain, indigestion, or gastrointestinal bleeding."
+      }
+    ]
   },
   { 
     id: 8, 
@@ -298,7 +445,28 @@ export const specialties = [
       "Changes in urine output or color",
       "High blood pressure resistant to treatment"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Is dialysis available at the hospital?",
+        answer: "Hemodialysis services are available with continuous monitoring by trained professionals."
+      },
+      {
+        question: "Do you treat chronic kidney disease?",
+        answer: "Long-term management for chronic kidney disease and related conditions is provided."
+      },
+      {
+        question: "Are kidney function tests available?",
+        answer: "Advanced laboratory services support kidney function assessment."
+      },
+      {
+        question: "How frequently should kidney patients undergo monitoring?",
+        answer: "Monitoring schedules are determined based on the patient’s clinical condition."
+      },
+      {
+        question: "Can diabetes and hypertension affect kidney health?",
+        answer: "Diabetes and hypertension are significant risk factors and require regular monitoring."
+      }
+    ]
   },
   { 
     id: 9, 
@@ -332,7 +500,28 @@ export const specialties = [
       "Chest pain or recurrent lung infections",
       "Snoring with daytime fatigue (possible sleep apnea)"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat asthma and chronic respiratory diseases?",
+        answer: "Comprehensive care is provided for asthma, COPD, and other lung conditions."
+      },
+      {
+        question: "Are pulmonary function tests available?",
+        answer: "Pulmonary diagnostics, including lung function testing, are available."
+      },
+      {
+        question: "Is critical care support available for respiratory emergencies?",
+        answer: "ICU facilities are equipped to manage severe respiratory conditions."
+      },
+      {
+        question: "Do you evaluate chronic cough and breathing difficulties?",
+        answer: "Assessment and treatment are provided for persistent respiratory symptoms."
+      },
+      {
+        question: "When should a pulmonologist be consulted?",
+        answer: "Consultation is advised for prolonged cough, breathlessness, or recurrent respiratory infections."
+      }
+    ]
   },
   { 
     id: 10, 
@@ -366,7 +555,28 @@ export const specialties = [
       "Multiple chronic health conditions",
       "Need for preventive health assessment"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you manage diabetes and hypertension?",
+        answer: "Comprehensive diagnosis and long-term management of chronic medical conditions are provided."
+      },
+      {
+        question: "Are preventive health check-up packages available?",
+        answer: "Structured health screening packages are offered for early detection."
+      },
+      {
+        question: "Do you treat infectious diseases and seasonal illnesses?",
+        answer: "Diagnosis and treatment of viral, bacterial, and lifestyle-related conditions are available."
+      },
+      {
+        question: "Do you provide ongoing care for chronic diseases?",
+        answer: "Individualized treatment plans are developed for long-term management."
+      },
+      {
+        question: "When should a physician consultation be sought?",
+        answer: "Consultation is recommended for persistent symptoms, unexplained fatigue, or general health concerns."
+      }
+    ]
   },
   { 
     id: 11, 
@@ -400,7 +610,28 @@ export const specialties = [
       "Nasal obstruction or recurrent sinus infections",
       "Hoarseness or throat discomfort"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat sinusitis and ear infections?",
+        answer: "Medical and surgical management of ENT conditions is provided."
+      },
+      {
+        question: "Are hearing assessments available?",
+        answer: "Audiometry and related diagnostic services are available."
+      },
+      {
+        question: "Do you perform endoscopic ENT procedures?",
+        answer: "Minimally invasive surgical procedures are performed when indicated."
+      },
+      {
+        question: "What symptoms require ENT consultation?",
+        answer: "Persistent ear pain, nasal blockage, throat discomfort, or hearing loss require evaluation."
+      },
+      {
+        question: "Are surgical treatments available for chronic ENT conditions?",
+        answer: "Surgical intervention is offered based on medical assessment."
+      }
+    ]
   },
   { 
     id: 12, 
@@ -434,7 +665,28 @@ export const specialties = [
       "Hair loss or scalp problems",
       "Cosmetic skin concerns or early signs of skin cancer"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you treat common skin conditions?",
+        answer: "Evaluation and treatment for acne, eczema, psoriasis, and other skin disorders are available."
+      },
+      {
+        question: "Are advanced dermatological procedures offered?",
+        answer: "Laser and other specialized skin treatments are provided."
+      },
+      {
+        question: "Do you manage hair and scalp conditions?",
+        answer: "Assessment and treatment for hair fall and scalp disorders are available."
+      },
+      {
+        question: "Can skin allergies be treated?",
+        answer: "Diagnosis and management of allergic skin conditions are provided."
+      },
+      {
+        question: "Are cosmetic dermatology services available?",
+        answer: "Selected cosmetic dermatology procedures are offered under specialist supervision."
+      }
+    ]
   },
   { 
     id: 13, 
@@ -467,7 +719,28 @@ export const specialties = [
       "Hernias or surgical conditions diagnosed",
       "Planning for minimally invasive surgery"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you perform minimally invasive surgical procedures?",
+        answer: "Laparoscopic procedures are performed for selected abdominal conditions."
+      },
+      {
+        question: "Is laparoscopic gallbladder surgery available?",
+        answer: "Laparoscopic cholecystectomy is available."
+      },
+      {
+        question: "Is hernia repair performed laparoscopically?",
+        answer: "Minimally invasive hernia repair is offered when clinically suitable."
+      },
+      {
+        question: "What is the recovery time after laparoscopic surgery?",
+        answer: "Recovery is generally shorter compared to open procedures, depending on the case."
+      },
+      {
+        question: "Are procedures performed by qualified surgeons?",
+        answer: "All procedures are performed by trained and experienced surgeons."
+      }
+    ]
   },
   { 
     id: 14, 
@@ -499,7 +772,28 @@ export const specialties = [
       "Diagnosis of cancer requiring surgical intervention",
       "Post-treatment follow-up and monitoring"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you provide surgical treatment for cancer?",
+        answer: "Surgical management is available for selected cancer types based on evaluation."
+      },
+      {
+        question: "Is cancer screening available?",
+        answer: "Screening services are available for early detection of certain cancers."
+      },
+      {
+        question: "Do you perform breast and gastrointestinal cancer surgeries?",
+        answer: "Surgical procedures are performed as per clinical indication."
+      },
+      {
+        question: "Is post-operative care provided?",
+        answer: "Comprehensive post-surgical monitoring and follow-up care are offered."
+      },
+      {
+        question: "When should surgical oncology consultation be considered?",
+        answer: "Consultation is advised following a confirmed diagnosis or specialist referral."
+      }
+    ]
   },
   { 
     id: 15, 
@@ -532,6 +826,27 @@ export const specialties = [
       "Congenital anomalies or cosmetic concerns",
       "Scar management and functional reconstruction"
     ],
-    faqs: []
+    faqs: [
+      {
+        question: "Do you offer reconstructive surgery services?",
+        answer: "Reconstructive procedures are available for trauma, burns, and congenital conditions."
+      },
+      {
+        question: "Are cosmetic surgical procedures available?",
+        answer: "Selected cosmetic procedures are performed following medical evaluation."
+      },
+      {
+        question: "Is scar revision available?",
+        answer: "Scar correction procedures are offered when clinically appropriate."
+      },
+      {
+        question: "What is the recovery period after surgery?",
+        answer: "Recovery depends on the type of procedure performed."
+      },
+      {
+        question: "Are surgeries performed by qualified specialists?",
+        answer: "Procedures are conducted by trained plastic and reconstructive surgeons."
+      }
+    ]
   }
 ];

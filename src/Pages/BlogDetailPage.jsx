@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import aboutusBanner from '../assets/aboutuss.png';
 import blogData from '../assets/blogs.json';
 import { BlogContentRenderer } from '../Components/BlogContentRenderer';
+import BlogFAQ from '../Components/BlogFAQ';
 
 import { blogImages } from '../utils/blogImages';
 
@@ -37,19 +38,13 @@ const BlogDetailPage = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Hero Banner Section */}
-            <div className="relative h-[300px] md:h-[350px] pt-24 overflow-hidden">
-                <img 
-                    src={aboutusBanner} 
-                    alt="Hospital Banner" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/60"></div>
-                <div className="absolute inset-0 flex items-center justify-center px-4 pt-20">
+            <div className="relative pt-32 pb-8 bg-white">
+                <div className="flex items-center justify-center px-4">
                     <div className="text-center max-w-4xl">
                         <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-[#FFE666] text-gray-800 text-xs md:text-sm font-semibold rounded-full mb-4">
                             {blog.focus_keyword}
                         </span>
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed px-4 break-words">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0B3D4C] leading-relaxed px-4 break-words">
                             {article.h1}
                         </h1>
                     </div>
@@ -119,31 +114,8 @@ const BlogDetailPage = () => {
                             </div>
                         ))}
 
-                        {/* FAQs */}
-                        {article.faqs && article.faqs.length > 0 && (
-                            <div className="mb-10">
-                                <h2 className="text-xl sm:text-2xl font-bold text-[#0B3D4C] mb-6">
-                                    Frequently Asked Questions
-                                </h2>
-                                <div className="space-y-4">
-                                    {article.faqs.map((faq, index) => (
-                                        <div key={index} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                            <h3 className="text-lg font-semibold text-[#0B3D4C] mb-3 flex items-start">
-                                                <span className="w-6 h-6 bg-[#FFE666] rounded-full flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
-                                                    Q
-                                                </span>
-                                                {faq.question}
-                                            </h3>
-                                            <p className="text-gray-700 ml-9">
-                                                <BlogContentRenderer content={faq.answer} />
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
 
-                        {/* Conclusion */}
+
                         {article.conclusion && (
                             <div className="bg-gradient-to-r from-[#0B3D4C] to-[#1B6B7A] text-white rounded-2xl p-8 mb-10">
                                 <h2 className="text-xl font-bold mb-4 flex items-center">
@@ -157,6 +129,12 @@ const BlogDetailPage = () => {
                                 </p>
                             </div>
                         )}
+
+                    </div>
+
+                    {/* FAQ Accordion Section */}
+                    <div className="w-full">
+                        <BlogFAQ faqs={article.faqs} />
                     </div>
 
                     {/* Related Posts */}

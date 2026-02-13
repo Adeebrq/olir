@@ -144,14 +144,18 @@ const AboutLeadershipTeam = () => {
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    transform: translate(-50%, -50%) rotate(-90deg);
-                    color: white;
-                    font-size: 4rem;
-                    font-weight: 600;
-                    letter-spacing: 2px;
+                    transform: translate(-50%, -50%);
+                    color: rgba(255, 255, 255, 0.4);
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                    letter-spacing: 0.2rem;
+                    text-transform: uppercase;
+                    writing-mode: vertical-rl;
+                    text-orientation: upright;
                     white-space: nowrap;
                     opacity: 0;
                     transition: opacity 0.4s ease 0.2s;
+                    user-select: none;
                 }
 
                .doctor-card:hover .department-text {

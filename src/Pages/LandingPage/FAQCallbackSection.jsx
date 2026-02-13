@@ -3,10 +3,10 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './FAQCallbackSection.css';
 
-const FAQCallbackSection = () => {
+const FAQCallbackSection = ({ faqs: customFaqs }) => {
     const [activeIndex, setActiveIndex] = useState(null);
 
-    const faqs = [
+    const defaultFaqs = [
         {
             question: "What makes Olir Super Speciality Hospital one of the best hospitals in Chennai?",
             answer: "At Olir Hospital, medical expertise is matched with compassion. Every patient is treated with care, dignity, and personal attention."
@@ -32,6 +32,8 @@ const FAQCallbackSection = () => {
             answer: "Each patient is cared for by qualified specialists following proven clinical practices. Quality checks, teamwork, and constant monitoring guide every decision."
         }
     ];
+
+    const displayFaqs = customFaqs || defaultFaqs;
 
     const toggleFAQ = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -67,7 +69,7 @@ const FAQCallbackSection = () => {
             </div>
 
             <div className="faq-grid">
-                {faqs.map((faq, index) => (
+                {displayFaqs.map((faq, index) => (
                     <div key={index} className="faq-item">
                         <button
                             className="faq-question"

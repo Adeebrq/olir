@@ -9,7 +9,7 @@ const navItems = [
   { label: 'Departments', path: '/department' },
   { label: 'Doctors', path: '/doctors' },
   { label: 'Blogs', path: '/blogs' },
-  { label: 'News/Media', path: '/comingsoon' },
+  { label: 'News/Media', path: '/news' },
   { label: 'Events', path: '/events' },
 ];
 
