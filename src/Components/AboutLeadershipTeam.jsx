@@ -10,7 +10,7 @@ const AboutLeadershipTeam = () => {
     };
 
     return (
-        <section className="py-12 md:py-16 px-6 md:px-16 lg:px-24 bg-gray-50">
+        <section className="py-12 mt-12 md:py-16 px-6 md:px-16 lg:px-24 bg-gray-50">
             <div className="max-w-7xl mx-auto text-center">
                 <span className="text-[#1976D2] text-sm font-semibold tracking-wider uppercase">Leadership Team</span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0B3D4C] mt-2 mb-4">
@@ -50,7 +50,10 @@ const AboutLeadershipTeam = () => {
                                     <img
                                         src={doctor.image}
                                         alt={doctor.name}
-                                        className="doctor-image"
+                                        className={`doctor-image ${
+                                            doctor.name === "Dr. F. Fakhruddin" ? "scale-fix" : 
+                                            doctor.name === "Dr. Nandini Govindarajan" ? "scale-up-nandini" : ""
+                                        }`}
                                     />
                                 </div>
 
@@ -58,24 +61,20 @@ const AboutLeadershipTeam = () => {
                                 <div className="bottom-overlay">
                                     <div className="doctor-info">
                                         <h4 className="doctor-name">{doctor.name}</h4>
-                                        <p className="doctor-specialties text-xs opacity-90 leading-tight mb-2 line-clamp-3">{doctor.oneLiner}</p>
                                         {doctor.qualification && (
-                                            <div className="credentials-compact">
-                                                {doctor.qualification.split(',').slice(0, 2).map((cred, i) => (
-                                                    <p key={i} className="credential-item font-medium">
-                                                        {cred.trim()}
-                                                    </p>
-                                                ))}
+                                            <div className="credentials-compact mb-3 font-medium">
+                                                {doctor.qualification.split(',').map(cred => cred.trim()).join(' • ')}
                                             </div>
                                         )}
+                                        <p className="doctor-specialties text-xs opacity-90 leading-tight line-clamp-3">{doctor.oneLiner}</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Extended credentials - shown on hover for doctors who have them */}
+                            {/*
                             <div className="extended-credentials mt-6 text-center max-w-[280px]">
                                 <div className="text-sm text-gray-600 space-y-2">
-                                    {/* Full Qualifications */}
                                     <div className="mb-2">
                                         {doctor.qualification.split(',').map((cred, i) => (
                                             <span key={i} className="block text-[#0B3D4C] font-semibold">
@@ -84,12 +83,10 @@ const AboutLeadershipTeam = () => {
                                         ))}
                                     </div>
                                     
-                                    {/* Description/Experience */}
                                     <p className="text-xs leading-relaxed text-gray-500">
                                         {doctor.description}
                                     </p>
                                     
-                                    {/* Designation */}
                                     {doctor.designation && (
                                         <p className="mt-3 pt-2 border-t border-gray-200">
                                             <span className="text-[#1976D2] font-medium block">{doctor.designation}</span>
@@ -97,6 +94,7 @@ const AboutLeadershipTeam = () => {
                                     )}
                                 </div>
                             </div>
+                            */}
                         </div>
                     ))}
                 </div>
@@ -282,6 +280,42 @@ const AboutLeadershipTeam = () => {
                         opacity: 1 !important;
                         max-height: 400px !important;
                         pointer-events: auto !important;
+                    }
+                }
+
+                /* Specific scale fix for Dr. Fakhruddin */
+                .scale-fix {
+                    transform: scale(0.92) !important;
+                    transform-origin: bottom center;
+                }
+                
+                .doctor-card:hover .scale-fix {
+                    transform: scale(0.98) translateX(15%) !important;
+                    transform-origin: bottom center;
+                }
+
+                @media (max-width: 768px) {
+                    .scale-fix {
+                        transform: scale(0.88) translateX(15%) !important;
+                        transform-origin: bottom center;
+                    }
+                }
+
+                /* Specific scale up for Dr. Nandini */
+                .scale-up-nandini {
+                    transform: scale(1.1) translateY(10%) !important;
+                    transform-origin: bottom center;
+                }
+                
+                .doctor-card:hover .scale-up-nandini {
+                    transform: scale(1.18) translateX(15%) translateY(10%) !important;
+                    transform-origin: bottom center;
+                }
+
+                @media (max-width: 768px) {
+                    .scale-up-nandini {
+                        transform: scale(1.18) translateX(15%) translateY(10%) !important;
+                        transform-origin: bottom center;
                     }
                 }
             `}</style>

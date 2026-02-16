@@ -128,12 +128,28 @@ const DepartmentDetail = () => {
                     <div className="mb-10">
                         <h2 className="text-2xl font-bold text-[#0B3D4C] mb-6">Our Specialists</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {department.specialists.map((doctor, index) => (
-                                <div key={index} className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                                    <h3 className="text-lg font-bold text-[#0B3D4C]">{doctor.name}</h3>
-                                    <p className="text-blue-600 text-sm mt-1">{doctor.qualification}</p>
-                                </div>
-                            ))}
+                            {department.specialists.map((doctor, index) => {
+                                const cardContent = (
+                                    <>
+                                        <h3 className="text-lg font-bold text-[#0B3D4C]">{doctor.name}</h3>
+                                        <p className="text-blue-600 text-sm mt-1">{doctor.qualification}</p>
+                                    </>
+                                );
+
+                                return doctor.link ? (
+                                    <Link 
+                                        to={doctor.link} 
+                                        key={index} 
+                                        className="bg-blue-50 p-6 rounded-xl border border-blue-100 block hover:bg-blue-100 transition-colors"
+                                    >
+                                        {cardContent}
+                                    </Link>
+                                ) : (
+                                    <div key={index} className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                                        {cardContent}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 )}

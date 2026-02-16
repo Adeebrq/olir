@@ -15,7 +15,11 @@ import DepartmentDetail from '../Pages/DepartmentDetail';
 import DoctorsPage from '../Pages/DoctorsPage';
 import DoctorProfile from '../Pages/DoctorProfile';
 import EventsPage from '../Pages/EventsPage';
+import EventDetailPage from '../Pages/EventDetailPage';
 import InsurancePage from '../Pages/InsurancePage';
+import NewsPage from '../Pages/NewsPage';
+import PrivacyPolicyPage from '../Pages/PrivacyPolicyPage';
+import TermsOfServicePage from '../Pages/TermsOfServicePage';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -34,9 +38,12 @@ function AnimatedRoutes() {
           <Route path="/doctors" element={<PageWrapper><DoctorsPage /></PageWrapper>} />
           <Route path="/doctors/:slug" element={<PageWrapper><DoctorProfile /></PageWrapper>} />
           <Route path="/HealthPackages" element={<PageWrapper><HealthPackages /></PageWrapper>} />
-          <Route path="/news" element={<PageWrapper><ComingSoon /></PageWrapper>} />
+          <Route path="/news" element={<PageWrapper><NewsPage /></PageWrapper>} />
           <Route path="/events" element={<PageWrapper><EventsPage /></PageWrapper>} />
+          <Route path="/events/:slug" element={<PageWrapper><EventDetailPage /></PageWrapper>} />
           <Route path="/insurance" element={<PageWrapper><InsurancePage /></PageWrapper>} />
+          <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicyPage /></PageWrapper>} />
+          <Route path="/terms-of-service" element={<PageWrapper><TermsOfServicePage /></PageWrapper>} />
         </Routes>
     </AnimatePresence>
   );
@@ -50,6 +57,7 @@ const PageWrapper = ({ children }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
+      onAnimationStart={() => window.scrollTo(0, 0)}
     >
       {children}
     </motion.div>

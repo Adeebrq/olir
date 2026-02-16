@@ -12,6 +12,9 @@ const Footer = () => {
                                 location.pathname === '/doctors' ||
                                 location.pathname.startsWith('/doctors/') ||
                                 location.pathname === '/HealthPackages' ||
+                                location.pathname === '/news' ||
+                                location.pathname === '/privacy-policy' ||
+                                location.pathname === '/terms-of-service' ||
                                 location.pathname.startsWith('/blog/');
   
   return (
@@ -24,19 +27,19 @@ const Footer = () => {
           {/* Column 1: Logo & Branding */}
           <div className="space-y-4">
             {/* Logo */}
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center">
               <img src={footerLogo} alt="Olir Super Speciality Hospital" className="h-21 w-auto mb-2" />
-              <p className="text-sm text-gray-600 italic">
+              <p className="text-sm text-gray-600 italic text-center">
                 "Where care meets patient experience"
               </p>
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-3 pt-2 justify-center md:justify-start">
+            <div className="flex space-x-3 pt-2 justify-center">
               <a href="https://www.instagram.com/olir.hospital/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/olir.hospital/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+              <a href="https://www.facebook.com/people/OlirHospital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="https://youtube.com/@olirhospital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
@@ -51,14 +54,13 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2.5 text-gray-700 text-sm">
-              {['About Us', 'Departments & Services', 'Doctors', 'Health Packages', 'Blogs', 'News/Media', 'Events'].map((item) => {
+              {['About Us', 'Departments & Services', 'Doctors', 'Blogs', 'News/Media', 'Events'].map((item) => {
                 // Define routes for each item
                 const getRoute = (label) => {
                   switch(label) {
                     case 'About Us': return '/aboutus';
                     case 'Departments & Services': return '/department';
                     case 'Doctors': return '/doctors';
-                    case 'Health Packages': return '/HealthPackages';
                     case 'Blogs': return '/blogs';
                     case 'News/Media': return '/news';
                     case 'Events': return '/events';
@@ -135,7 +137,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 space-y-3 md:space-y-0">
 
           <div className="text-center md:text-left">
-            © 2026/Olir. All rights reserved.
+            © 2026- Olir Super Speciality Hospital. All rights reserved.
           </div>
 
           <div className="text-center">
@@ -146,13 +148,13 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="font-semibold text-gray-700 hover:underline"
             >
-              @Cruxcreations
+              @Crux Creations
             </a>
           </div>
 
           <div className="flex justify-center md:justify-end space-x-4">
-            <Link to="/comingsoon" className="hover:underline hover:text-teal-600">Privacy Policy</Link>
-            <Link to="/comingsoon" className="hover:underline hover:text-teal-600">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:underline hover:text-teal-600">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:underline hover:text-teal-600">Terms of Service</Link>
           </div>
 
         </div>

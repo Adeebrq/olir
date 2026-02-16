@@ -33,7 +33,7 @@ export const featuredDoctors = [
     {
         name: "Dr. T. E. Sathish Kumar",
         route: "/doctors/Dr-Sathish-Kumar",
-        qualification: "MBBS, MS General Surgery, MCh Neurosurgery",
+        qualification: "MBBS, MS, MCh Neurosurgery",
         department: "Neurology",
         image: doc2,
         specialties: "Brain Tumour, Epilepsy, Spine Surgery, Nervous System Conditions",
@@ -72,6 +72,8 @@ export const featuredDoctors = [
 ];
 
 export const getAllDoctors = () => {
+    /* 
+    // Commenting out detailed logic for now as requested
     const otherSpecialists = specialties.flatMap(dept => {
         if (!dept.specialists) return [];
         return dept.specialists.map(specialist => {
@@ -97,6 +99,10 @@ export const getAllDoctors = () => {
     });
 
     return [...featuredDoctors, ...otherSpecialists];
+    */
+
+    // Only return featured doctors for now
+    return [...featuredDoctors];
 };
 
 export const getDoctorBySlug = (slug) => {

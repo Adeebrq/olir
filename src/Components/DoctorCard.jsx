@@ -42,7 +42,7 @@ const DoctorCard = ({ doctor }) => {
                     <img
                         src={image}
                         alt={name}
-                        className="doctor-image"
+                        className={`doctor-image ${name.includes("Fakhruddin") ? "scale-down-fakhruddin" : ""}`}
                     />
                 </div>
 
@@ -50,20 +50,14 @@ const DoctorCard = ({ doctor }) => {
                 <div className="bottom-overlay">
                     <div className="doctor-info">
                         <h4 className="doctor-name">{name}</h4>
-                        <p className="doctor-specialties">{department}</p>
                         
                         {qualificationsList.length > 0 && (
-                            <div className="credentials-compact">
-                                {qualificationsList.slice(0, 3).map((cred, i) => (
-                                    <p key={i} className="credential-item">
-                                        {cred}
-                                    </p>
-                                ))}
-                                {qualificationsList.length > 3 && (
-                                    <p className="credential-item">...</p>
-                                )}
+                            <div className="credentials-compact mb-2 font-medium">
+                                {qualificationsList.join(' • ')}
                             </div>
                         )}
+
+                        <p className="doctor-specialties">{department}</p>
                     </div>
                 </div>
             </div>
@@ -200,6 +194,12 @@ const DoctorCard = ({ doctor }) => {
                     .department-text {
                         font-size: 16px;
                     }
+                }
+
+                /* Specific scale down for Dr. Fakhruddin */
+                .scale-down-fakhruddin {
+                    transform: scale(0.95) translateX(15%) !important;
+                    transform-origin: bottom center;
                 }
             `}</style>
         </div>

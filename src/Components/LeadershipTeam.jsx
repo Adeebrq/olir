@@ -47,7 +47,7 @@ const LeadershipTeam = () => {
             name: "Dr. T. E. Sathish Kumar",
             degree: (
                 <>
-                    MBBS, MS General Surgery,
+                    MBBS, MS,
                     <br />
                     MCh Neurosurgery
                 </>
@@ -57,22 +57,42 @@ const LeadershipTeam = () => {
             route: "/doctors/Dr-Sathish-Kumar",
             tooltips: {
                 topLeft: {
-                    text: "NEURO SURGERY",
+                    text: (
+                        <>
+                            KMC - MBBS,  MMC - MS <br />
+                            & MCh Neurosurgery
+                        </>
+                    ),
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "SPINE INTERVENTION",
+                    text: (
+                        <>
+                            15+ years neurosurgery, <br /> academia, research
+                            <br />
+                        </>
+                    ),
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "MICROSURGICAL PRECISION",
+                    text: (
+                        <>
+                            Expert in brain, spine,
+                            <br /> minimally invasive surgery
+                        </>
+                    ),
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
                 },
                 bottomRight: {
-                    text: "COMPLEX NEUROSURGERY",
+                    text: (
+                        <>
+                            Innovative, compassionate, patient-first
+                            <br /> neurosurgical care
+                        </>
+                    ),
                     icon: <Heart className="w-4 h-4" />,
                     iconBg: "bg-pink-400"
                 }
@@ -87,22 +107,46 @@ const LeadershipTeam = () => {
             route: "/doctors/Dr-Nandini-Govindarajan",
             tooltips: {
                 topLeft: {
-                    text: "DIAGNOSTIC ONCOLOGY",
+                    text: (
+                        <>
+                            KMC - MBBS, <br className="md:hidden" /> MMC - MD PATHOLOGY,
+                            <br />
+                            IIM -  HOSPITAL MANAGEMENT
+                        </>
+                    ),
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 topRight: {
-                    text: "CLINICAL GOVERNANCE",
+                    text: (
+                        <>
+                            15+ YEARS
+                            <br />
+                            ONCOPATHOLOGY <br className="md:hidden" /> EXPERIENCE
+                        </>
+                    ),
                     icon: <Stethoscope className="w-4 h-4" />,
                     iconBg: "bg-teal-500"
                 },
                 bottomLeft: {
-                    text: "QUALITY SYSTEMS",
+                    text: (
+                        <>
+                            SPECIALIST IN BREAST, <br className="md:hidden" /> BONE,
+                            <br />
+                            SOFT TISSUE PATHOLOGY
+                        </>
+                    ),
                     icon: <Award className="w-4 h-4" />,
                     iconBg: "bg-yellow-400"
                 },
                 bottomRight: {
-                    text: "PATIENT SAFETY",
+                    text: (
+                        <>
+                            COMPASSIONATE, <br className="md:hidden" /> QUALITY-FOCUSED
+                            <br />
+                            CARE EVERY DIAGNOSIS
+                        </>
+                    ),
                     icon: <Heart className="w-4 h-4" />,
                     iconBg: "bg-pink-400"
                 }

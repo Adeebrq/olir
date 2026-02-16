@@ -41,7 +41,7 @@ export const specialties = [
       "Advanced endoscopic and microscopic surgical equipment"
     ],
     specialists: [
-      { name: "Dr. Sathish Kumar T.E.", qualification: "MBBS, MS, MCh – Director & Senior Neurosurgeon" }
+      { name: "Dr. Sathish Kumar T.E.", qualification: "MBBS, MS, MCh – Director & Senior Neurosurgeon", link: "/doctors/Dr-Sathish-Kumar" }
     ],
     consultation: [
       "Sudden weakness or numbness in limbs",
@@ -98,8 +98,8 @@ export const specialties = [
       "Modern rehabilitation gyms and equipment"
     ],
     specialists: [
-      { name: "Dr. F. Fakhruddin", qualification: "M.S. (Ortho) – Co-Founder" },
-      { name: "Dr. Naga Praveen", qualification: "MBBS, D.Ortho, DNB – Co-Founder" }
+      { name: "Dr. F. Fakhruddin", qualification: "M.S. (Ortho) – Co-Founder", link: "/doctors/Dr-Fakhruddin" },
+      { name: "Dr. Naga Praveen", qualification: "MBBS, D.Ortho, DNB – Co-Founder", link: "/doctors/Dr-Naga-Praven" }
     ],
     consultation: [
       "Persistent joint pain or swelling",

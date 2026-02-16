@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllDoctors, generateSlug } from '../utils/doctorUtils';
+import { specialties } from '../utils/departmentData';
 import DoctorCard from '../Components/DoctorCard';
 import BookAppointment from '../Components/bookingModal';
 import { useNavigate } from 'react-router-dom';
@@ -15,8 +16,8 @@ const DoctorsPage = () => {
 
     const allDoctors = getAllDoctors();
 
-    // Get unique departments for filter
-    const departments = ['All', ...new Set(allDoctors.map(doc => doc.department))];
+    // Get unique departments for filter (from all available specialties)
+    const departments = ['All', ...specialties.map(dept => dept.title)];
 
     // Filter doctors based on selection
     const filteredDoctors = selectedDepartment === 'All'
@@ -70,8 +71,23 @@ const DoctorsPage = () => {
 
                 {/* If no specialists found */}
                 {filteredDoctors.length === 0 && (
-                    <div className="text-center text-gray-500 py-10">
-                        <p>No specialists found for this department.</p>
+                    <div className="text-center py-16 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-2xl mx-auto">
+                        <div className="text-[#1B6B7A] mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-bold text-[#0B3D4C] mb-2">Specialists Coming Soon</h3>
+                        <p className="text-gray-500 max-w-md mx-auto mb-6">
+                            We are currently updating our list of specialists for this department. 
+                            Please contact us directly to book an appointment with our expert team.
+                        </p>
+                        <a 
+                            href="tel:04440000006"
+                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-full !text-white bg-[#1B6B7A] hover:bg-[#155A66] transition-colors duration-300"
+                        >
+                            Call Us: 044 4000 0006
+                        </a>
                     </div>
                 )}
             

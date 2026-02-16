@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
-const BookAppointment = ({ isInline = false }) => {
+const BookAppointment = ({ isInline = false, title, subtitle }) => {
     // EmailJS credentials
     const EMAILJS_PUBLIC_KEY = 'FqCUUwUN7yP250PrF';
     const EMAILJS_SERVICE_ID = 'service_e7dt1co';
@@ -89,11 +89,11 @@ const BookAppointment = ({ isInline = false }) => {
             >
                 {/* HEADER */}
                 <p className="text-center text-white/80 mb-2">
-                    Could not find what you are looking for?
+                {subtitle || "Need Expert Medical Care?"}
                 </p>
 
                 <h2 className="text-center text-3xl font-semibold mb-10">
-                    Book Appointment
+                    {title || "Book an appointment with our specialists today."}
                 </h2>
 
                 {/* FORM */}

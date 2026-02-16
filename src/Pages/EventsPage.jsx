@@ -1,77 +1,13 @@
 import React, { useEffect } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { CalendarDays, MapPin } from 'lucide-react';
 import BookAppointment from '../Components/bookingModal';
-
-const upcomingEvents = [
-  {
-    id: 1,
-    title: 'Free Orthopedic Health Camp',
-    date: 'March 15, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Diabetes Awareness Workshop',
-    date: 'March 22, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Women\'s Health Screening Drive',
-    date: 'April 5, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'Cardiac Health Awareness Program',
-    date: 'April 12, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop',
-  },
-  {
-    id: 5,
-    title: 'Pediatric Vaccination Drive',
-    date: 'April 20, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&h=400&fit=crop',
-  },
-  {
-    id: 6,
-    title: 'Spine Health Awareness Camp',
-    date: 'May 3, 2026',
-    location: 'Olir Hospital, Velachery',
-    image: 'https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=600&h=400&fit=crop',
-  },
-];
-
-const pastEventsRowTop = [
-  { id: 1, title: 'Annual Health Check-up Camp 2025', date: 'December 10, 2025', image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&h=400&fit=crop' },
-  { id: 2, title: 'Blood Donation Drive', date: 'November 20, 2025', image: 'https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&h=400&fit=crop' },
-  { id: 3, title: 'World Heart Day Walkathon', date: 'September 29, 2025', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop' },
-  { id: 4, title: 'Neuro Awareness Seminar', date: 'August 15, 2025', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop' },
-  { id: 5, title: 'Eye Camp for Senior Citizens', date: 'July 8, 2025', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&h=400&fit=crop' },
-  { id: 6, title: 'Community Yoga Day', date: 'June 21, 2025', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop' },
-];
-
-const pastEventsRowBottom = [
-  { id: 7, title: 'Diabetes Screening Camp', date: 'May 15, 2025', image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop' },
-  { id: 8, title: 'Free Dental Check-up Drive', date: 'April 22, 2025', image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop' },
-  { id: 9, title: 'Mother & Child Health Camp', date: 'March 8, 2025', image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop' },
-  { id: 10, title: 'Kidney Awareness Program', date: 'February 14, 2025', image: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=400&fit=crop' },
-  { id: 11, title: 'Spine Health Workshop', date: 'January 20, 2025', image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop' },
-  { id: 12, title: 'New Year Health Resolution Camp', date: 'January 5, 2025', image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop' },
-];
+import { upcomingEvents, allPastEvents } from '../utils/eventData';
+import { Link } from 'react-router-dom';
 
 const PastEventCard = ({ event }) => (
-  <div className="px-3">
-    <div className="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer">
-      <div className="relative h-72 overflow-hidden">
+  <Link to={`/events/${event.slug}`} className="block h-full">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer h-full">
+      <div className="relative h-64 overflow-hidden">
         <img
           src={event.image}
           alt={event.title}
@@ -92,49 +28,19 @@ const PastEventCard = ({ event }) => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const EventsPage = () => {
+    const [showAllUpcoming, setShowAllUpcoming] = React.useState(false);
+    const [showAllPast, setShowAllPast] = React.useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const sliderSettingsLTR = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 8000,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    rtl: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
-  };
-
-  const sliderSettingsRTL = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 8000,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    rtl: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
-  };
+  const visibleUpcoming = showAllUpcoming ? upcomingEvents : upcomingEvents.slice(0, 3);
+  const visiblePast = showAllPast ? allPastEvents : allPastEvents.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -149,10 +55,11 @@ const EventsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => (
-              <div
+            {visibleUpcoming.map((event) => (
+              <Link
+                to={`/events/${event.slug}`}
                 key={event.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden group hover:scale-[1.03] hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="bg-white rounded-xl shadow-md overflow-hidden group hover:scale-[1.03] hover:shadow-xl transition-all duration-300 cursor-pointer block"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -184,9 +91,20 @@ const EventsPage = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+          
+          {!showAllUpcoming && (
+              <div className="flex justify-end mt-4">
+                  <button 
+                      onClick={() => setShowAllUpcoming(true)}
+                      className="text-[#1B6B7A] font-semibold hover:underline flex items-center gap-1"
+                  >
+                      See More &rarr;
+                  </button>
+              </div>
+          )}
         </section>
 
         {/* Past Events */}
@@ -198,23 +116,22 @@ const EventsPage = () => {
             </h2>
           </div>
 
-          {/* Top Row - Left to Right */}
-          <div className="mb-6">
-            <Slider {...sliderSettingsLTR}>
-              {pastEventsRowTop.map((event) => (
-                <PastEventCard key={event.id} event={event} />
-              ))}
-            </Slider>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                {visiblePast.map((event) => (
+                    <PastEventCard key={event.id} event={event} />
+                ))}
+            </div>
 
-          {/* Bottom Row - Right to Left */}
-          <div>
-            <Slider {...sliderSettingsRTL}>
-              {pastEventsRowBottom.map((event) => (
-                <PastEventCard key={event.id} event={event} />
-              ))}
-            </Slider>
-          </div>
+            {!showAllPast && (
+                <div className="flex justify-end mt-4">
+                    <button 
+                        onClick={() => setShowAllPast(true)}
+                        className="text-[#1B6B7A] font-semibold hover:underline flex items-center gap-1"
+                    >
+                        See More &rarr;
+                    </button>
+                </div>
+            )}
         </section>
       </div>
 
@@ -225,5 +142,4 @@ const EventsPage = () => {
     </div>
   );
 };
-
 export default EventsPage;
