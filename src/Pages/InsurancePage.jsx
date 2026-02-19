@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { CheckCircle, Shield, FileText, Phone, HelpCircle, ChevronRight } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { CheckCircle, Shield, FileText, Phone, HelpCircle, ChevronRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import BookAppointment from '../Components/bookingModal';
 
@@ -86,6 +86,8 @@ const faqs = [
 ];
 
 const InsurancePage = () => {
+  const [openFaq, setOpenFaq] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -97,7 +99,7 @@ const InsurancePage = () => {
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-12">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+            <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
               Hassle-Free Cashless Treatment
             </h2>
@@ -111,9 +113,9 @@ const InsurancePage = () => {
           {cashlessBenefits.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#1B6B7A]/30 transition-all duration-300"
+              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#0169a5]/30 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-full bg-[#1B6B7A]/10 flex items-center justify-center text-[#1B6B7A] mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#0169a5]/10 flex items-center justify-center text-[#0169a5] mb-4">
                 {item.icon}
               </div>
               <h3 className="text-base font-bold text-[#0B3D4C] mb-2">{item.title}</h3>
@@ -127,7 +129,7 @@ const InsurancePage = () => {
       <section className="bg-[#F0F8FF] py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+            <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
               How Cashless Admission Works
             </h2>
@@ -141,7 +143,7 @@ const InsurancePage = () => {
               { step: '04', title: 'Settlement', desc: 'The hospital settles the bill directly with your insurer. You only pay co-pay or non-covered charges, if any.' },
             ].map((item, index) => (
               <div key={index} className="relative bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <span className="text-4xl font-black text-[#1B6B7A]/20 absolute top-4 right-4">{item.step}</span>
+                <span className="text-4xl font-black text-[#0169a5]/20 absolute top-4 right-4">{item.step}</span>
                 <h3 className="text-base font-bold text-[#0B3D4C] mb-2 mt-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -153,7 +155,7 @@ const InsurancePage = () => {
       {/* Insurance Partners */}
       <section className="max-w-7xl mx-auto px-6 py-14">
         <div className="flex items-center gap-3 mb-10">
-          <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+          <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
             Empanelled Insurance Companies
           </h2>
@@ -165,9 +167,9 @@ const InsurancePage = () => {
           {insurancePartners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-100 hover:border-[#1B6B7A]/50 transition-colors"
+              className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-100 hover:border-[#0169a5]/50 transition-colors"
             >
-              <CheckCircle className="w-5 h-5 text-[#1B6B7A] flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 text-[#0169a5] flex-shrink-0" />
               <span className="text-sm font-medium text-gray-700">{partner}</span>
             </div>
           ))}
@@ -178,7 +180,7 @@ const InsurancePage = () => {
       <section className="bg-[#FAFAFA] py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+            <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
               Third Party Administrators (TPAs)
             </h2>
@@ -190,9 +192,9 @@ const InsurancePage = () => {
             {tpaPartners.map((tpa, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-100 hover:border-[#1B6B7A]/50 transition-colors"
+                className="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-100 hover:border-[#0169a5]/50 transition-colors"
               >
-                <Shield className="w-5 h-5 text-[#1B6B7A] flex-shrink-0" />
+                <Shield className="w-5 h-5 text-[#0169a5] flex-shrink-0" />
                 <span className="text-sm font-medium text-gray-700">{tpa}</span>
               </div>
             ))}
@@ -203,7 +205,7 @@ const InsurancePage = () => {
       {/* Government Schemes */}
       <section className="max-w-7xl mx-auto px-6 py-14">
         <div className="flex items-center gap-3 mb-10">
-          <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+          <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
             Government Health Schemes
           </h2>
@@ -215,8 +217,8 @@ const InsurancePage = () => {
             { name: 'State Schemes', full: 'Tamil Nadu Government Health Insurance', desc: 'We participate in applicable Tamil Nadu state health insurance schemes for eligible beneficiaries.' },
           ].map((scheme, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300">
-              <div className="bg-[#1B6B7A]/10 px-3 py-1 rounded-full inline-block mb-3">
-                <span className="text-sm font-bold text-[#1B6B7A]">{scheme.name}</span>
+              <div className="bg-[#0169a5]/10 px-3 py-1 rounded-full inline-block mb-3">
+                <span className="text-sm font-bold text-[#0169a5]">{scheme.name}</span>
               </div>
               <h3 className="text-base font-bold text-[#0B3D4C] mb-2">{scheme.full}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{scheme.desc}</p>
@@ -229,21 +231,32 @@ const InsurancePage = () => {
       <section className="bg-[#F0F8FF] py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-1.5 h-8 bg-[#1B6B7A] rounded-full"></div>
+            <div className="w-1.5 h-8 bg-[#0169a5] rounded-full"></div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B3D4C]">
               Frequently Asked Questions
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-start gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#1B6B7A] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-sm font-bold text-[#0B3D4C] mb-2">{faq.question}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
+            {[faqs.slice(0, 3), faqs.slice(3, 6)].map((column, colIndex) => (
+              <div key={colIndex} className="space-y-4">
+                {column.map((faq, index) => {
+                  const faqIndex = colIndex * 3 + index;
+                  return (
+                    <div key={faqIndex} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                      <button
+                        onClick={() => setOpenFaq(openFaq === faqIndex ? null : faqIndex)}
+                        className="w-full flex items-center gap-3 p-6 text-left cursor-pointer"
+                      >
+                        <HelpCircle className="w-5 h-5 text-[#0169a5] flex-shrink-0" />
+                        <h3 className="text-sm font-bold text-[#0B3D4C] flex-1">{faq.question}</h3>
+                        <ChevronDown className={`w-5 h-5 text-[#0169a5] flex-shrink-0 transition-transform duration-300 ${openFaq === faqIndex ? 'rotate-180' : ''}`} />
+                      </button>
+                      <div className={`overflow-hidden transition-all duration-300 ${openFaq === faqIndex ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <p className="text-gray-600 text-sm leading-relaxed px-6 pb-6 pl-14">{faq.answer}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>

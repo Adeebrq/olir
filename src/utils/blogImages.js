@@ -1,14 +1,14 @@
 // Import all blog images
-import cardiologyImg from '../assets/blogs/1. Cardiology.jpg';
-import neurologyImg from '../assets/blogs/2. Neurology.jpg';
-import jointImg from '../assets/blogs/3. Joint Replacement.jpg';
-import dialysisImg from '../assets/blogs/4. Dialysis.jpg';
-import pediatricImg from '../assets/blogs/5. Pediatric and Maternity.jpg';
-import oncologyImg from '../assets/blogs/6. Oncology Robotics.jpg';
-import icuImg from '../assets/blogs/7. ICU.jpg';
-import entImg from '../assets/blogs/8. ENT.jpg';
-import insuranceImg from '../assets/blogs/9. Health Insurance.jpg';
-import diagnosticsImg from '../assets/blogs/10. CT-MRI Scan.jpg';
+import cardiologyImg from '../assets/blogs/best-cardiology-hospital-chennai.webp';
+import neurologyImg from '../assets/blogs/best-neurology-hospital-chennai.webp';
+import jointImg from '../assets/blogs/joint-replacement-surgery-chennai.webp';
+import dialysisImg from '../assets/blogs/dialysis-center-chennai.webp';
+import pediatricImg from '../assets/blogs/pediatric-maternity-hospital-chennai.webp';
+import oncologyImg from '../assets/blogs/robotic-cancer-surgery-chennai.webp';
+import icuImg from '../assets/blogs/icu-trauma-care-chennai.webp';
+import entImg from '../assets/blogs/ent-skin-treatment-chennai.webp';
+import insuranceImg from '../assets/blogs/health-insurance-claims-chennai.webp';
+import diagnosticsImg from '../assets/blogs/ct-mri-scan-diagnostics-chennai.webp';
 
 // Map slugs to images
 export const blogImages = {

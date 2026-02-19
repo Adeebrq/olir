@@ -50,8 +50,8 @@ const DoctorsPage = () => {
                                 onClick={() => setSelectedDepartment(dept)}
                                 className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wide border transition-all duration-300 ${
                                     selectedDepartment === dept
-                                        ? 'bg-[#1B6B7A] text-white border-[#1B6B7A]'
-                                        : 'bg-white text-gray-500 border-gray-300 hover:border-[#1B6B7A] hover:text-[#1B6B7A]'
+                                        ? 'bg-[#0169a5] text-white border-[#0169a5]'
+                                        : 'bg-white text-gray-500 border-gray-300 hover:border-[#0169a5] hover:text-[#0169a5]'
                                 }`}
                             >
                                 {dept}
@@ -72,7 +72,7 @@ const DoctorsPage = () => {
                 {/* If no specialists found */}
                 {filteredDoctors.length === 0 && (
                     <div className="text-center py-16 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-2xl mx-auto">
-                        <div className="text-[#1B6B7A] mb-4">
+                        <div className="text-[#0169a5] mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
@@ -84,7 +84,7 @@ const DoctorsPage = () => {
                         </p>
                         <a 
                             href="tel:04440000006"
-                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-full !text-white bg-[#1B6B7A] hover:bg-[#155A66] transition-colors duration-300"
+                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-full !text-white bg-[#0169a5] hover:bg-[#015487] transition-colors duration-300"
                         >
                             Call Us: 044 4000 0006
                         </a>
