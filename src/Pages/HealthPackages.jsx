@@ -14,142 +14,252 @@ const HealthPackages = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Mock Data
     const packages = [
         {
             id: 0,
-            title: "50% Off – Full Body Health Check",
-            testCount: "60+",
-            tests: ["CBC", "Fasting & PP Blood Sugar", "Lipid Profile", "Liver Function", "Kidney Function", "Thyroid", "ECG", "Urine Routine"],
-            price: 1199,
-            originalPrice: 2399,
-            discount: "50% off",
-            tags: ["Premium Health Package", "Limited Time Offer"],
-            category: "Full Body",
+            title: "Master Health Package (Basic)",
+            testCount: 10,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC)",
+                "Thyroid Profile Total (TSH)",
+                "Blood Grouping / Typing",
+                "Glucose (Fasting / Random)",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test (RFT/KFT)",
+                "Chest X-ray",
+                "ECG"
+            ],
+            consultation: "Physician Consultation",
+            price: 1099,
+            // originalPrice: 2199,
+            // discount: "50% off",
+            tags: ["Basic"],
+            category: "Master Health",
             color: "bg-blue-50 text-blue-700 border-blue-100",
             icon: Activity
         },
         {
             id: 1,
-            title: "Olir Prime Health Plan",
-            testCount: 68,
-            tests: ["CBC", "Diabetes Screen", "Lipid Profile", "Liver Function", "Kidney Function", "Thyroid"],
-            price: 2049,
-            originalPrice: 5123,
-            discount: "60% off",
-            tags: ["Buy 2, Get EXTRA OFF", "Best Seller"],
-            category: "Full Body",
+            title: "Master Health Package (Lite)",
+            testCount: 13,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC)",
+                "Blood Grouping / Typing",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (Fasting and PP)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test (RFT/KFT)",
+                "Chest X-ray",
+                "ECG",
+                "TMT",
+                "USG Abdomen"
+            ],
+            consultation: "Physician Consultation",
+            price: 2799,
+            // originalPrice: 5599,
+            // discount: "50% off",
+            tags: ["Popular"],
+            category: "Master Health",
             color: "bg-purple-50 text-purple-700 border-purple-100",
             icon: Crown
         },
         {
             id: 2,
-            title: "Olir Vitamin Check - Basic",
-            testCount: 3,
-            tests: ["Vitamin D", "Vitamin B12", "Calcium"],
-            price: 2240,
-            originalPrice: 5600,
-            discount: "60% off",
-            tags: ["Essential"],
-            category: "Vitamins",
-             color: "bg-blue-50 text-blue-700 border-blue-100",
-             icon: Sun
+            title: "Executive Health Check-up (Male)",
+            testCount: 15,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC) with ESR",
+                "Blood Grouping / Typing",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Chest X-ray",
+                "ECG",
+                "TMT / ECHO",
+                "USG Abdomen",
+                "PSA",
+                "Vitamin D"
+            ],
+            consultation: "Physician & Specialist Consultation",
+            price: 3599,
+            // originalPrice: 7199,
+            // discount: "50% off",
+            tags: ["For Men"],
+            category: "Executive",
+            color: "bg-teal-50 text-teal-700 border-teal-100",
+            icon: UserCheck
         },
         {
             id: 3,
-            title: "Thyroid Assessment - Basic",
-            testCount: 3,
-            tests: ["T3", "T4", "TSH"],
-            price: 911,
-            originalPrice: 2278,
-            discount: "60% off",
-            tags: ["Top Selling"],
-            category: "Thyroid",
-             color: "bg-teal-50 text-teal-700 border-teal-100",
-             icon: Zap
+            title: "Executive Health Check-up (Female)",
+            testCount: 15,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC) with ESR",
+                "Blood Grouping / Typing",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Chest X-ray",
+                "ECG",
+                "TMT / ECHO",
+                "USG Abdomen",
+                "Pap Smear",
+                "Vitamin D"
+            ],
+            consultation: "Physician & Specialist Consultation",
+            price: 3599,
+            // originalPrice: 7199,
+            // discount: "50% off",
+            tags: ["For Women"],
+            category: "Executive",
+            color: "bg-pink-50 text-pink-700 border-pink-100",
+            icon: Heart
         },
         {
             id: 4,
-            title: "Olir Superior Health Plan",
-            testCount: 89,
-            tests: ["Complete Hemogram", "Iron Deficiency", "Liver Profile", "Lipid Profile", "Renal Profile", "Thyroid", "Diabetes"],
-            price: 3249,
-            originalPrice: 9283,
-            discount: "65% off",
-            tags: ["Includes FREE Vitamin D Test"],
-            category: "Full Body",
-             color: "bg-rose-50 text-rose-700 border-rose-100",
-             icon: Star
+            title: "Annual Health Check-up (Bone Health)",
+            testCount: 17,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC) with ESR",
+                "Blood Grouping / Typing",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Ionised Calcium",
+                "Chest X-ray",
+                "ECG",
+                "TMT / ECHO",
+                "USG Abdomen",
+                "Vitamin D",
+                "Uric Acid"
+            ],
+            consultation: "Physician & Orthopedic Consultation",
+            price: 4299,
+            // originalPrice: 8599,
+            // discount: "50% off",
+            tags: ["Bone Health"],
+            category: "Annual",
+            color: "bg-amber-50 text-amber-700 border-amber-100",
+            icon: Zap
         },
         {
             id: 5,
-            title: "Olir Basic Full Body Check",
-            testCount: 8,
-            tests: ["CBC", "FBS", "Cholesterol", "Creatinine"],
-            price: 770,
-            originalPrice: 2200,
-            discount: "65% off",
-            tags: ["Budget Friendly"],
-            category: "Full Body",
-             color: "bg-indigo-50 text-indigo-700 border-indigo-100",
-             icon: UserCheck
+            title: "Annual Health Check-up (Comprehensive)",
+            testCount: 21,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC) with ESR",
+                "Blood Grouping / Typing",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "CRP",
+                "Renal Function Test",
+                "Ionised Calcium",
+                "Chest X-ray",
+                "ECG",
+                "TMT",
+                "ECHO",
+                "USG Abdomen",
+                "Vitamin D",
+                "Vitamin B12",
+                "Se Iron, Ferritin, TIBC",
+                "Uric Acid"
+            ],
+            consultation: "Physician & Specialist Consultation",
+            price: 6599,
+            // originalPrice: 13199,
+            // discount: "50% off",
+            tags: ["Comprehensive"],
+            category: "Annual",
+            color: "bg-rose-50 text-rose-700 border-rose-100",
+            icon: Star
         },
         {
             id: 6,
-            title: "Annual Health Check-Up",
-            testCount: 88,
-            tests: ["Comprehensive Screen", "Organ Function", "Vitamin Profile"],
-            price: 2449,
-            originalPrice: 6123,
-            discount: "60% off",
-            tags: ["Recommended"],
-            category: "Full Body",
-             color: "bg-amber-50 text-amber-700 border-amber-100",
-             icon: ClipboardList
+            title: "Women's Day Special Package",
+            testCount: 14,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC)",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Chest X-ray",
+                "ECG",
+                "ECHO",
+                "USG Abdomen",
+                "Pap Smear",
+                "Vitamin D"
+            ],
+            consultation: "Physician & Gynaecologist Consultation",
+            price: 3299,
+            // originalPrice: 6599,
+            // discount: "50% off",
+            tags: ["For Women"],
+            category: "Women's Health",
+            color: "bg-pink-50 text-pink-700 border-pink-100",
+            icon: Heart
         },
         {
             id: 7,
-            title: "Full Body Checkup Female - Advance",
-            testCount: 97,
-            tests: ["Women Specific Hormones", "Iron Studies", "Bone Health", "Complete Organ Function"],
-            price: 5999,
-            originalPrice: 17140,
-            discount: "65% off",
-            tags: ["For Women"],
-            category: "Women's Health",
-             color: "bg-pink-50 text-pink-700 border-pink-100",
-             icon: Heart
-        },
-        {
-            id: 8,
-            title: "Kidney Check - Essential",
-            testCount: 63,
-            tests: ["Urea", "Creatinine", "Uric Acid", "Electrolytes", "Urine Routine"],
-            price: 1610,
-            originalPrice: 4026,
-            discount: "60% off",
-            tags: ["Organ Specific"],
-            category: "Kidney",
-             color: "bg-cyan-50 text-cyan-700 border-cyan-100",
-             icon: Droplets
-        },
-        {
-            id: 9,
-            title: "Fever Panel - Basic",
-            testCount: 53,
-            tests: ["CBC", "ESR", "Malaria", "Typhoid", "Urine Analysis"],
-            price: 1500,
-            originalPrice: 3000,
-            discount: "50% off",
-            tags: ["Seasonal"],
-            category: "Fever",
-             color: "bg-orange-50 text-orange-700 border-orange-100",
-             icon: Thermometer
+            title: "Master Health Check-up (Lifestyle Medicine)",
+            testCount: 19,
+            tests: [
+                "Complete Urine Examination",
+                "Complete Blood Count (CBC)",
+                "Thyroid Profile Total (T3, T4, TSH)",
+                "Glucose (FBS and PPBS)",
+                "Blood Grouping / Typing",
+                "HbA1c",
+                "Liver Function Test (LFT)",
+                "Lipid Profile",
+                "Renal Function Test",
+                "Chest X-ray",
+                "ECG",
+                "ECHO",
+                "TMT",
+                "USG Abdomen",
+                "Vitamin D",
+                "CRP",
+                "Lipoprotein A",
+                "Homocysteine"
+            ],
+            consultation: "Dietician & Lifestyle Medicine Specialist Consultation",
+            price: 8999,
+            // originalPrice: 17999,
+            // discount: "50% off",
+            tags: ["Premium"],
+            category: "Lifestyle",
+            color: "bg-indigo-50 text-indigo-700 border-indigo-100",
+            icon: ClipboardList
         }
     ];
 
-    const categories = ["All", "Full Body", "Women's Health", "Vitamins", "Thyroid", "Kidney", "Fever"];
-    const popularTests = ["CBC", "HbA1c", "Thyroid", "Lipid Profile", "Liver Function", "Vitamin D", "Diabetes Screen"];
+    const categories = ["All", "Master Health", "Executive", "Annual", "Women's Health", "Lifestyle"];
+    const popularTests = ["CBC", "HbA1c", "Thyroid", "Lipid Profile", "Liver Function", "Vitamin D", "ECG", "USG Abdomen"];
 
     const toggleTest = (test) => {
         setSelectedTests(prev => 
@@ -170,7 +280,7 @@ const HealthPackages = () => {
         switch (sortBy) {
             case 'priceLow': return a.price - b.price;
             case 'priceHigh': return b.price - a.price;
-            case 'discount': return parseInt(b.discount) - parseInt(a.discount);
+            // case 'discount': return parseInt(b.discount) - parseInt(a.discount);
             case 'tests': return b.testCount - a.testCount;
             default: return 0;
         }
@@ -202,7 +312,7 @@ const HealthPackages = () => {
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-lg font-bold text-gray-800">Filters</h2>
                             <button 
-                                onClick={() => setSelectedCategory('All')} 
+                                onClick={() => { setSelectedCategory('All'); setSelectedTests([]); }} 
                                 className="text-xs text-blue-600 font-semibold hover:underline"
                             >
                                 Clear All
@@ -275,10 +385,22 @@ const HealthPackages = () => {
                                 <option value="recommended">Popularity</option>
                                 <option value="priceLow">Price: Low to High</option>
                                 <option value="priceHigh">Price: High to Low</option>
-                                <option value="discount">Highest Discount</option>
+                                {/* <option value="discount">Highest Discount</option> */}
                                 <option value="tests">Most Tests</option>
                             </select>
                         </div>
+                    </div>
+
+                    {/* Fasting Notice */}
+                    <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                            <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                            </svg>
+                        </div>
+                        <p className="text-sm text-amber-800 font-medium">
+                            12 Hours of Fasting is Mandatory for all health packages
+                        </p>
                     </div>
 
                     {/* Grid */}
@@ -287,11 +409,11 @@ const HealthPackages = () => {
                             <div key={pkg.id} onClick={() => setSelectedPackage({
                                 title: pkg.title,
                                 price: pkg.price,
-                                originalPrice: pkg.originalPrice,
-                                discount: pkg.discount,
+                                // originalPrice: pkg.originalPrice,
+                                // discount: pkg.discount,
                                 tag: pkg.tags[0],
                                 features: pkg.tests,
-                                description: `Includes ${pkg.testCount} tests.`
+                                description: `${pkg.consultation} · ${pkg.testCount} Tests Included`
                             })} className={`${pkg.category === "Women's Health" ? 'bg-pink-50 border-pink-100' : 'bg-white border-gray-100'} rounded-2xl border p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group cursor-pointer`}>
                                 
                                 {/* Header / Icon Area */}
@@ -312,49 +434,65 @@ const HealthPackages = () => {
                                         {pkg.title}
                                     </h3>
                                     <p className="text-xs text-gray-500 font-medium bg-gray-50 inline-block px-2 py-1 rounded">
-                                        Includes {pkg.testCount} Tests
+                                        {pkg.testCount} Tests & Investigations
                                     </p>
                                 </div>
 
                                 {/* Included Tests Preview */}
-                                <div className="mb-6 flex-grow">
+                                <div className="mb-4 flex-grow">
                                     <ul className="space-y-1">
-                                        {pkg.tests.slice(0, 3).map((t, i) => (
+                                        {pkg.tests.slice(0, 4).map((t, i) => (
                                             <li key={i} className="text-xs text-gray-500 flex items-center gap-1.5">
-                                                <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                                                <svg className="w-3 h-3 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                </svg>
                                                 {t}
                                             </li>
                                         ))}
-                                        {pkg.tests.length > 3 && (
-                                            <li className="text-xs text-blue-500 font-medium pl-2.5">
-                                                + {pkg.tests.length - 3} more
+                                        {pkg.tests.length > 4 && (
+                                            <li className="text-xs text-blue-500 font-medium pl-4">
+                                                + {pkg.tests.length - 4} more tests
                                             </li>
                                         )}
                                     </ul>
                                 </div>
 
+                                {/* Consultation Info */}
+                                <div className="mb-4 bg-teal-50 rounded-lg px-3 py-2">
+                                    <p className="text-[11px] text-teal-700 font-semibold flex items-center gap-1.5">
+                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                        {pkg.consultation}
+                                    </p>
+                                </div>
+
                                 {/* Pricing & Action */}
-                                <div className="mt-auto pt-4 border-t border-gray-50">
+                                <div className="mt-auto pt-4 border-t border-gray-100">
                                     <div className="flex justify-between items-end mb-3">
                                         <div>
                                             <div className="flex items-center gap-2 mb-0.5">
-                                                <span className="text-lg font-bold text-gray-900">₹{pkg.price}</span>
-                                                <span className="text-xs text-green-600 font-bold bg-green-50 px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(34,197,94,0.4)] animate-[pulse-glow_2s_ease-in-out_infinite]">{pkg.discount}</span>
+                                                <span className="text-xl font-bold text-gray-900">₹{pkg.price.toLocaleString('en-IN')}</span>
+                                                {/* Uncomment below when discount data is added */}
+                                                {/* <span className="text-xs text-green-600 font-bold bg-green-50 px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(34,197,94,0.4)] animate-[pulse-glow_2s_ease-in-out_infinite]">{pkg.discount}</span> */}
                                             </div>
-                                            <span className="text-xs text-gray-400 line-through">₹{pkg.originalPrice}</span>
+                                            {/* <span className="text-xs text-gray-400 line-through">₹{pkg.originalPrice}</span> */}
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-3">
                                         <button 
-                                            onClick={() => setSelectedPackage({
-                                                title: pkg.title,
-                                                price: pkg.price,
-                                                originalPrice: pkg.originalPrice,
-                                                discount: pkg.discount,
-                                                tag: pkg.tags[0],
-                                                features: pkg.tests, // Mapping tests to features for modal
-                                                description: `Includes ${pkg.testCount} tests.`
-                                            })}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSelectedPackage({
+                                                    title: pkg.title,
+                                                    price: pkg.price,
+                                                    // originalPrice: pkg.originalPrice,
+                                                    // discount: pkg.discount,
+                                                    tag: pkg.tags[0],
+                                                    features: pkg.tests,
+                                                    description: `${pkg.consultation} · ${pkg.testCount} Tests Included`
+                                                });
+                                            }}
                                             className="w-full py-2.5 rounded-lg bg-[#0B3D4C] text-white text-sm font-semibold hover:bg-[#092e3a] transition-colors shadow-md hover:shadow-lg"
                                         >
                                             Book Now
@@ -384,3 +522,4 @@ const HealthPackages = () => {
 };
 
 export default HealthPackages;
+
